@@ -2,6 +2,7 @@ function OpenLayersTools(mapOptions) {
     this.BaseFunc = new BaseFunc(this);
     this.Console = new Console(this);
     this.Layer = new Layer(this);
+    this.Control = new Control(this);
     this.MapOptions = this.BaseFunc.extendConfigFromDefault(mapOptions, defaultOptions.mapOptions);
     this.Map = new OpenLayers.Map(this.MapOptions);
 
