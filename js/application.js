@@ -24,6 +24,7 @@ var Core = {
         this.Objects.OpenLayersTools.Layer.addMap({
             'OpenStreetMap': 'OSM'
         });
+        //TODO: don't load images from images/OpenLayers. FIX IT
         this.Objects.OpenLayersTools.Control.addControls({
             LayerSwitcher: {
                 controlType: 'LayerSwitcher',

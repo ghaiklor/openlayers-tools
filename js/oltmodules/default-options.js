@@ -12,5 +12,3 @@ var defaultOptions = {
         zoom: 5
     }
 }
-
-OpenLayers.imgPath = '../images/OpenLayers/';
