@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" name="Default" comment="Create classes for initialize map">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/oltmodules/basefunc.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/oltmodules/console.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/oltmodules/default-options.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/oltmodules/layer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/application.js" afterPath="$PROJECT_DIR$/js/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/openlayers-tools.debug.js" afterPath="$PROJECT_DIR$/js/openlayers-tools.debug.js" />
+    <list default="true" id="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="openlayers-tools.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363855889033" ignored="false" />
+    <file path="/Dummy.txt" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363855934328" ignored="false" />
     <file path="/README.md" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363815982752" ignored="false" />
     <file path="/index.html" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363855481241" ignored="false" />
     <file path="/openlayers-tools.debug.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363855176487" ignored="false" />
@@ -68,7 +61,7 @@
       <file leaf-file-name="basefunc.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/oltmodules/basefunc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="29" selection-start="316" selection-end="316" vertical-scroll-proportion="0.40106952">
+            <state line="14" column="28" selection-start="482" selection-end="482" vertical-scroll-proportion="0.36842105">
               <folding />
             </state>
           </provider>
@@ -309,7 +302,11 @@
       <created>1363818207212</created>
       <updated>1363818207212</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Create classes for initialize map">
+      <created>1363855949180</created>
+      <updated>1363855949180</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -336,7 +333,7 @@
     <frame x="-1" y="27" width="1368" height="742" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -506,7 +503,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/oltmodules/basefunc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="29" selection-start="316" selection-end="316" vertical-scroll-proportion="0.40106952">
+        <state line="14" column="28" selection-start="482" selection-end="482" vertical-scroll-proportion="0.36842105">
           <folding />
         </state>
       </provider>
