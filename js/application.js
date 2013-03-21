@@ -1,17 +1,36 @@
-function EntryPoint() {
-    window.OpenLayersTools = new OpenLayersTools();
-
-    OpenLayersTools.checkModule();
-//TODO: Realize adding maps on OpenLayers.Map
-    OpenLayersTools.Layer.addMap({
-        'test': 'test',
-        'test2': 'test2'
-    })
+function ApplicationEvents() {
+    return this;
 }
+
+ApplicationEvents.prototype = {
+    bindAllEvents: function () {
+
+    }
+};
+
+var Core = {
+    Config: {
+
+    },
+    Objects: {
+        OpenLayersTools: null,
+        ApplicationEvents: null
+    },
+    EntryPoint: function () {
+        this.Objects.ApplicationEvents = new ApplicationEvents();
+        this.Objects.ApplicationEvents.bindAllEvents();
+
+        this.Objects.OpenLayersTools = new OpenLayersTools();
+        this.Objects.OpenLayersTools.Layer.addMap({
+            'OpenStreetMap': 'OSM'
+        })
+    }
+};
+
 
 var documentReadyInterval = window.setInterval(function () {
     if (document.readyState == "complete") {
-        EntryPoint();
+        Core.EntryPoint();
         window.clearInterval(documentReadyInterval);
     }
 }, 100);

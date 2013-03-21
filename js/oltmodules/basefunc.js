@@ -1,4 +1,5 @@
-function BaseFunc() {
+function BaseFunc(parent) {
+    this.parent = parent;
     return this;
 }
 
@@ -14,4 +15,4 @@ BaseFunc.prototype = {
         }
         return existsConfig;
     }
-}
+};
