@@ -11,6 +11,10 @@ Control.prototype = {
     },
     addControls: function (controls) {
         for (var control in controls) {
+            if (controls[control].controlType == undefined) {
+                this.parent.Console.writeError('Func: addControls | You must specify controlType attribute in control parameters!');
+                return false;
+            }
             switch (controls[control].controlType) {
                 case 'ArgParser':
                     this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.ArgParser(controls[control]));
