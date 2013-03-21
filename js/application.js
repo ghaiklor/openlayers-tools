@@ -1,8 +1,12 @@
 function EntryPoint() {
     window.OpenLayersTools = new OpenLayersTools();
 
-    OpenLayersTools.Console.writeDebug('Using of OpenLayersTools object initialized');
     OpenLayersTools.checkModule();
+//TODO: Realize adding maps on OpenLayers.Map
+    OpenLayersTools.Layer.addMap({
+        'test': 'test',
+        'test2': 'test2'
+    })
 }
 
 var documentReadyInterval = window.setInterval(function () {

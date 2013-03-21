@@ -1,28 +1,18 @@
-function Console() {
-    this.debugMode = true;
-    return this;
-}
-
-Console.prototype = {
-    writeInfo: function (message) {
-        if (console) {
-            console.info(message);
-        }
-    },
-    writeDebug: function (message) {
-        if (console && this.debugMode) {
-            console.debug(message);
-        }
-    }
-};
-
-function OpenLayersTools() {
+function OpenLayersTools(mapOptions) {
+    this.BaseFunc = new BaseFunc();
     this.Console = new Console();
+    this.Layer = new Layer();
+    this.MapOptions = this.BaseFunc.extendConfigFromDefault(mapOptions, defaultOptions.mapOptions);
+    this.Map = new OpenLayers.Map(this.MapOptions);
+
     return this;
 }
 
 OpenLayersTools.prototype = {
     checkModule: function () {
+        for (var obj in this) {
+            this.Console.writeInfo(obj + ' exists!');
+        }
         this.Console.writeInfo('OpenLayersTools exists!');
     }
 };
