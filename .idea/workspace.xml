@@ -1,27 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" name="Default" comment="Update layer Class. Added functions addMap and addVectorLayer. Realized children-&gt;parent connection in OpenLayersTools.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/application.js" afterPath="$PROJECT_DIR$/js/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/oltmodules/basefunc.js" afterPath="$PROJECT_DIR$/js/oltmodules/basefunc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/oltmodules/console.js" afterPath="$PROJECT_DIR$/js/oltmodules/console.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+    <list default="true" id="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/oltmodules/layer.js" afterPath="$PROJECT_DIR$/js/oltmodules/layer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/open-layers.tidy.css" afterPath="$PROJECT_DIR$/css/open-layers.tidy.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/openlayers-tools.debug.js" afterPath="$PROJECT_DIR$/js/openlayers-tools.debug.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/styles.css" afterPath="$PROJECT_DIR$/css/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="openlayers-tools.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363869897479" ignored="false" />
+    <file path="/Dummy.txt" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363869987345" ignored="false" />
     <file path="/README.md" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363815982752" ignored="false" />
     <file path="/index.html" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363864134305" ignored="false" />
     <file path="/openlayers-tools.debug.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363868899798" ignored="false" />
     <file path="/application.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363866211238" ignored="false" />
-    <file path="/layer.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363869681949" ignored="false" />
+    <file path="/layer.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363871234889" ignored="false" />
     <file path="/styles.css" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363864764938" ignored="false" />
     <file path="/basefunc.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363867202027" ignored="false" />
     <file path="/console.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363869090767" ignored="false" />
@@ -57,7 +48,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="40" selection-start="357" selection-end="357" vertical-scroll-proportion="2.25">
+            <state line="13" column="40" selection-start="357" selection-end="357" vertical-scroll-proportion="-0.625">
               <folding />
             </state>
           </provider>
@@ -81,10 +72,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layer.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="layer.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/oltmodules/layer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="31" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0">
+            <state line="110" column="46" selection-start="4583" selection-end="4583" vertical-scroll-proportion="0.5">
               <folding />
             </state>
           </provider>
@@ -103,15 +94,6 @@
         <entry file="file://$PROJECT_DIR$/js/oltmodules/console.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="26" column="37" selection-start="658" selection-end="658" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="open-layers.tidy.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/css/open-layers.tidy.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="469" column="31" selection-start="9401" selection-end="9401" vertical-scroll-proportion="0.6016043">
               <folding />
             </state>
           </provider>
@@ -150,9 +132,9 @@
         <option value="$PROJECT_DIR$/js/oltmodules/console.js" />
         <option value="$PROJECT_DIR$/js/application.js" />
         <option value="$PROJECT_DIR$/css/styles.css" />
-        <option value="$PROJECT_DIR$/js/oltmodules/layer.js" />
         <option value="$PROJECT_DIR$/js/oltmodules/basefunc.js" />
         <option value="$PROJECT_DIR$/css/open-layers.tidy.css" />
+        <option value="$PROJECT_DIR$/js/oltmodules/layer.js" />
       </list>
     </option>
   </component>
@@ -370,7 +352,11 @@
       <created>1363855949180</created>
       <updated>1363855949180</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update layer Class. Added functions addMap and addVectorLayer. Realized children-&gt;parent connection in OpenLayersTools.">
+      <created>1363869993463</created>
+      <updated>1363869993463</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -397,7 +383,7 @@
     <frame x="-1" y="27" width="1368" height="742" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -519,7 +505,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="40" selection-start="357" selection-end="357" vertical-scroll-proportion="2.25">
+        <state line="13" column="40" selection-start="357" selection-end="357" vertical-scroll-proportion="-0.625">
           <folding />
         </state>
       </provider>
@@ -552,16 +538,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/oltmodules/layer.js">
+    <entry file="file://$PROJECT_DIR$/js/oltmodules/basefunc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="31" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0">
+        <state line="17" column="2" selection-start="523" selection-end="523" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/oltmodules/basefunc.js">
+    <entry file="file://$PROJECT_DIR$/css/open-layers.tidy.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="2" selection-start="523" selection-end="523" vertical-scroll-proportion="0.0">
+        <state line="474" column="25" selection-start="9479" selection-end="9479" vertical-scroll-proportion="0.5263158">
           <folding />
         </state>
       </provider>
@@ -573,9 +559,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/open-layers.tidy.css">
+    <entry file="file://$PROJECT_DIR$/js/oltmodules/layer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="469" column="31" selection-start="9401" selection-end="9401" vertical-scroll-proportion="0.6016043">
+        <state line="110" column="46" selection-start="4583" selection-end="4583" vertical-scroll-proportion="0.5">
           <folding />
         </state>
       </provider>
