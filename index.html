@@ -4,10 +4,20 @@
     <link rel="stylesheet" href="css/styles.css"/>
     <link rel="stylesheet" href="css/open-layers.tidy.css"/>
     <title>OpenLayersTools - Main Page</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 </head>
 <body>
-
-<div class="main-container">
+<div class="header">
+    <ul id="header-menu" class="header-menu">
+        <li>
+            Test
+        </li>
+        <li>
+            Test 2
+        </li>
+    </ul>
+</div>
+<div class="main-container" id="main-container">
     <div class="left-panel" id="left-panel">
         Elements on control
     </div>
@@ -15,6 +25,15 @@
         <div class="map" id="map"></div>
     </div>
 </div>
+<div class="footer">
+    <span>Идея, разработка: Обрезков Евгений &#169;2013</span>
+</div>
+
+<script type="text/javascript" src="js/lib/jquery-1.9.1.min.js"></script>
+
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNKpdMOa4yLweNWNdAGvagK13ZNMpMRWM&sensor=false">
+</script>
 
 <script type="text/javascript" src="js/lib/OpenLayers.js"></script>
 

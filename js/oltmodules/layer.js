@@ -57,7 +57,6 @@ Layer.prototype = {
         }
         if (layers.length != 0) {
             this.parent.Map.addLayers(layers);
-            this.parent.Console.writeDebug('Func: addMap | Layers is not null and it\'s added to OpenLayersTools.Map!');
             return true;
         } else {
             this.parent.Console.writeError('Func: addMap | The count of layers is 0! Check parameters for function addMap!');

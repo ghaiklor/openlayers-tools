@@ -110,7 +110,7 @@ Control.prototype = {
                     this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.SelectFeature(this.parent.Layer.getLayerByName(controls[control].layerName), controls[control]));
                     break;
                 case 'SLDSelect':
-                    //TODO: пока не нужен, когда понадобится, доделаю
+                    //TODO: болванка SLDSelect
                     this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.SLDSelect(controls[control]));
                     break;
                 case 'Snapping':

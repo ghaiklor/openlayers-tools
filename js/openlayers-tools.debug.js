@@ -6,8 +6,6 @@ function OpenLayersTools(mapOptions) {
     this.MapOptions = this.BaseFunc.extendConfigFromDefault(mapOptions, defaultOptions.mapOptions);
     this.Map = new OpenLayers.Map(this.MapOptions);
 
-    OpenLayers.imgPath = '../images/OpenLayers/';
-
     return this;
 }
 
