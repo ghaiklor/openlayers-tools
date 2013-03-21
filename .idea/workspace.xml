@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/oltmodules/layer.js" afterPath="$PROJECT_DIR$/js/oltmodules/layer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="openlayers-tools.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363869987345" ignored="false" />
+    <file path="/Dummy.txt" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363871250452" ignored="false" />
     <file path="/README.md" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363815982752" ignored="false" />
     <file path="/index.html" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363864134305" ignored="false" />
     <file path="/openlayers-tools.debug.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363868899798" ignored="false" />
     <file path="/application.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363866211238" ignored="false" />
-    <file path="/layer.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363871234889" ignored="false" />
+    <file path="/layer.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363871262161" ignored="false" />
     <file path="/styles.css" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363864764938" ignored="false" />
     <file path="/basefunc.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363867202027" ignored="false" />
     <file path="/console.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363869090767" ignored="false" />
@@ -75,7 +74,7 @@
       <file leaf-file-name="layer.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/oltmodules/layer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="46" selection-start="4583" selection-end="4583" vertical-scroll-proportion="0.5">
+            <state line="145" column="9" selection-start="6037" selection-end="6037" vertical-scroll-proportion="0.7631579">
               <folding />
             </state>
           </provider>
@@ -356,7 +355,11 @@
       <created>1363869993463</created>
       <updated>1363869993463</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update layer Class. Added functions addMap and addVectorLayer. Realized children-&gt;parent connection in OpenLayersTools.">
+      <created>1363871259233</created>
+      <updated>1363871259233</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -561,7 +564,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/oltmodules/layer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="46" selection-start="4583" selection-end="4583" vertical-scroll-proportion="0.5">
+        <state line="145" column="9" selection-start="6037" selection-end="6037" vertical-scroll-proportion="0.7631579">
           <folding />
         </state>
       </provider>
