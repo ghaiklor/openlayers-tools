@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" name="Default" comment="Realized demoFunc for adding vehicles on Map.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/lib/OpenLayers.js" afterPath="$PROJECT_DIR$/js/lib/OpenLayers.js" />
+    <list default="true" id="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" name="Default" comment="Added new functions: moveVehicle, removeVehicle, setVisibilityVehicle, buildTrack.&#10;Added new Class - Track.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/oltmodules/track.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/application.js" afterPath="$PROJECT_DIR$/js/application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/oltmodules/basefunc.js" afterPath="$PROJECT_DIR$/js/oltmodules/basefunc.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/oltmodules/default-options.js" afterPath="$PROJECT_DIR$/js/oltmodules/default-options.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/openlayers-tools.debug.js" afterPath="$PROJECT_DIR$/js/openlayers-tools.debug.js" />
@@ -12,19 +13,20 @@
     </list>
     <ignored path="openlayers-tools.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363944840546" ignored="false" />
+    <file path="/Dummy.txt" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363949837489" ignored="false" />
     <file path="/README.md" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363897407233" ignored="false" />
-    <file path="/index.html" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363944010471" ignored="false" />
-    <file path="/openlayers-tools.debug.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363943601094" ignored="false" />
+    <file path="/index.html" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363947073156" ignored="false" />
+    <file path="/openlayers-tools.debug.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363947045861" ignored="false" />
     <file path="/application.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363944648710" ignored="false" />
     <file path="/layer.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363871262161" ignored="false" />
     <file path="/styles.css" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363900125485" ignored="false" />
-    <file path="/basefunc.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363941617409" ignored="false" />
+    <file path="/basefunc.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363946961521" ignored="false" />
     <file path="/console.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363869090767" ignored="false" />
     <file path="/open-layers.tidy.css" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363869981082" ignored="false" />
     <file path="/control.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363873091819" ignored="false" />
-    <file path="/default-options.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363943213252" ignored="false" />
-    <file path="/vehicle.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363943234873" ignored="false" />
+    <file path="/default-options.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363948642866" ignored="false" />
+    <file path="/vehicle.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363946829684" ignored="false" />
+    <file path="/track.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363949584812" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +49,7 @@
       <file leaf-file-name="application.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/application.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="11" selection-start="1699" selection-end="1699" vertical-scroll-proportion="0.0">
+            <state line="108" column="40" selection-start="3273" selection-end="3273" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -56,16 +58,16 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="40" selection-start="620" selection-end="620" vertical-scroll-proportion="-0.625">
+            <state line="47" column="60" selection-start="1670" selection-end="1670" vertical-scroll-proportion="2.25">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="openlayers-tools.debug.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="openlayers-tools.debug.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/openlayers-tools.debug.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="4" selection-start="570" selection-end="570" vertical-scroll-proportion="0.4473684">
+            <state line="18" column="4" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -74,7 +76,7 @@
       <file leaf-file-name="default-options.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/oltmodules/default-options.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="2" selection-start="682" selection-end="682" vertical-scroll-proportion="0.0">
+            <state line="24" column="30" selection-start="809" selection-end="809" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -89,10 +91,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="basefunc.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="basefunc.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/oltmodules/basefunc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="25" selection-start="1256" selection-end="1256" vertical-scroll-proportion="0.0">
+            <state line="36" column="4" selection-start="1288" selection-end="1288" vertical-scroll-proportion="0.7631579">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="track.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/oltmodules/track.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="63" selection-start="2550" selection-end="2550" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -101,7 +112,7 @@
       <file leaf-file-name="vehicle.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/oltmodules/vehicle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="2" selection-start="1228" selection-end="1228" vertical-scroll-proportion="0.0">
+            <state line="23" column="4" selection-start="1231" selection-end="1231" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -148,7 +159,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/default-options.js" />
         <option value="$PROJECT_DIR$/js/basefunc.js" />
         <option value="$PROJECT_DIR$/js/layer.js" />
         <option value="$PROJECT_DIR$/js/console.js" />
@@ -158,12 +168,13 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/js/oltmodules/layer.js" />
         <option value="$PROJECT_DIR$/css/styles.css" />
-        <option value="$PROJECT_DIR$/js/oltmodules/basefunc.js" />
+        <option value="$PROJECT_DIR$/js/oltmodules/vehicle.js" />
+        <option value="$PROJECT_DIR$/js/application.js" />
         <option value="$PROJECT_DIR$/js/openlayers-tools.debug.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/application.js" />
         <option value="$PROJECT_DIR$/js/oltmodules/default-options.js" />
-        <option value="$PROJECT_DIR$/js/oltmodules/vehicle.js" />
+        <option value="$PROJECT_DIR$/js/oltmodules/track.js" />
+        <option value="$PROJECT_DIR$/js/oltmodules/basefunc.js" />
       </list>
     </option>
   </component>
@@ -407,7 +418,11 @@
       <created>1363942219677</created>
       <updated>1363942219678</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Realized demoFunc for adding vehicles on Map.">
+      <created>1363944910381</created>
+      <updated>1363944910381</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -496,7 +511,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Realized demoFunc for adding vehicles on Map." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new functions: moveVehicle, removeVehicle, setVisibilityVehicle, buildTrack.&#10;Added new Class - Track." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -522,18 +537,12 @@
     <MESSAGE value="Fixed bug with no loading images of OpenLayers.&#10;Fixed bug with initial center of Map." />
     <MESSAGE value="Realized func to Adding Vehicle Marker on Map." />
     <MESSAGE value="Realized demoFunc for adding vehicles on Map." />
+    <MESSAGE value="Added new functions: moveVehicle, removeVehicle, setVisibilityVehicle, buildTrack.&#10;Added new Class - Track." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="14" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/openlayers-tools.debug.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="33" selection-start="397" selection-end="397" vertical-scroll-proportion="0.0">
@@ -574,13 +583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/oltmodules/console.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="26" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/oltmodules/control.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="61" selection-start="416" selection-end="416" vertical-scroll-proportion="0.0">
@@ -595,44 +597,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/oltmodules/basefunc.js">
+    <entry file="file://$PROJECT_DIR$/js/oltmodules/console.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="25" selection-start="1256" selection-end="1256" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="40" selection-start="620" selection-end="620" vertical-scroll-proportion="-0.625">
+        <state line="14" column="26" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/application.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="11" selection-start="1699" selection-end="1699" vertical-scroll-proportion="0.0">
+        <state line="108" column="40" selection-start="3273" selection-end="3273" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="60" selection-start="1670" selection-end="1670" vertical-scroll-proportion="2.25">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/oltmodules/default-options.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="2" selection-start="682" selection-end="682" vertical-scroll-proportion="0.0">
+        <state line="24" column="30" selection-start="809" selection-end="809" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/oltmodules/vehicle.js">
+    <entry file="file://$PROJECT_DIR$/js/oltmodules/track.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="2" selection-start="1228" selection-end="1228" vertical-scroll-proportion="0.0">
+        <state line="38" column="63" selection-start="2550" selection-end="2550" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/openlayers-tools.debug.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="4" selection-start="570" selection-end="570" vertical-scroll-proportion="0.4473684">
+        <state line="18" column="4" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/oltmodules/vehicle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="4" selection-start="1231" selection-end="1231" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/oltmodules/basefunc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="4" selection-start="1288" selection-end="1288" vertical-scroll-proportion="0.7631579">
           <folding />
         </state>
       </provider>

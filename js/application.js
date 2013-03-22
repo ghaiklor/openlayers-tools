@@ -106,7 +106,7 @@ var Core = {
         this.Objects.OpenLayersTools.Layer.addVectorLayer('Транспортные средства', {
             styleMap: {
                 default: {
-                    display: '',
+                    display: '${display}',
                     label: '${label}'
                 }
             }

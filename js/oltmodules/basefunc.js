@@ -29,10 +29,12 @@ BaseFunc.prototype = {
         return true;
     },
     checkUndefined: function (object) {
-        if (object == undefined || object == null || object == '') {
-            return true;
-        } else {
-            return false;
-        }
+        return object == undefined || object == null || object == '';
+    },
+    geometryToString: function (geometry) {
+        return geometry.toString();
+    },
+    stringToGeometry: function (string) {
+        return OpenLayers.Geometry.fromWKT(string);
     }
 };

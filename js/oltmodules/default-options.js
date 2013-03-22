@@ -17,5 +17,12 @@ var defaultOptions = {
         id: 'default',
         display: '',
         projection: 'EPSG:4326'
+    },
+    trackOptions: {
+        id: 'default',
+        display: '',
+        projection: 'EPSG: 4326',
+        minInterval: 0.000001,
+        maxInterval: 0.001
     }
 };
