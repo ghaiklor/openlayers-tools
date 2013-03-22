@@ -9,7 +9,7 @@ function OpenLayersTools(mapOptions) {
 
     OpenLayers.ImgPath = this.MapOptions.imgPath;
 
-    this.BaseFunc.centerMap(32.25366, 48.51982, 'EPSG:4326');
+    this.BaseFunc.centerMap(32.25366, 48.51982, this.MapOptions.displayProjection);
 
     return this;
 }

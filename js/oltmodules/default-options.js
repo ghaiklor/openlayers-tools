@@ -15,6 +15,7 @@ var defaultOptions = {
     vehicleOptions: {
         label: 'default',
         id: 'default',
-        display: ''
+        display: '',
+        projection: 'EPSG:4326'
     }
-}
+};

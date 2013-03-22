@@ -1,9 +1,37 @@
+function OpenLayersApplication() {
+    return this;
+}
+
+OpenLayersApplication.prototype = {
+    addRandomVehicle: function () {
+        var longitude = Math.random() * (50 - 20) + 20;
+        var latitude = Math.random() * (50 - 20) + 20;
+        var id = Math.floor(Math.random() * 1000000);
+        Core.Objects.OpenLayersTools.Vehicle.addVehicle('Транспортные средства', {
+            longitude: longitude,
+            latitude: latitude
+        }, {
+            id: id,
+            label: 'Testing Vehicle ' + id
+        });
+        Core.Objects.OpenLayersTools.BaseFunc.centerMap(longitude, latitude, 'EPSG:4326');
+    }
+};
+
 function ApplicationEvents() {
+    this.idAddRandomVehicleButton = 'addRandomVehicle';
     return this;
 }
 
 ApplicationEvents.prototype = {
+    addRandomVehicleButtonOnClick: function () {
+        Core.Objects.OpenLayersApplication.addRandomVehicle();
+    },
     bindAllEvents: function () {
+        var self = this;
+        $('#' + this.idAddRandomVehicleButton).click(function () {
+            self.addRandomVehicleButtonOnClick();
+        });
         $(window).resize(function () {
             Core.RecalcDOMSize();
         });
@@ -18,6 +46,7 @@ var Core = {
         idMapContainer: 'map'
     },
     Objects: {
+        OpenLayersApplication: null,
         OpenLayersTools: null,
         ApplicationEvents: null
     },
@@ -27,7 +56,7 @@ var Core = {
         $('#' + this.Config.idMainContainer).css({
             width: width,
             height: height - 60
-        })
+        });
         $('#' + this.Config.idLeftPanel).css({
             width: 200,
             height: height - 80
@@ -47,10 +76,12 @@ var Core = {
         this.Objects.ApplicationEvents = new ApplicationEvents();
         this.Objects.ApplicationEvents.bindAllEvents();
 
+        this.Objects.OpenLayersApplication = new OpenLayersApplication();
+
         this.Objects.OpenLayersTools = new OpenLayersTools({
             controls: []
         });
-        this.Objects.OpenLayersTools.checkModule();
+//        this.Objects.OpenLayersTools.checkModule();
         this.Objects.OpenLayersTools.Control.addControls({
             LayerSwitcher: {
                 controlType: 'LayerSwitcher',
@@ -72,6 +103,14 @@ var Core = {
                 controlType: 'Attribution'
             }
         });
+        this.Objects.OpenLayersTools.Layer.addVectorLayer('Транспортные средства', {
+            styleMap: {
+                default: {
+                    display: '',
+                    label: '${label}'
+                }
+            }
+        })
     }
 };
 

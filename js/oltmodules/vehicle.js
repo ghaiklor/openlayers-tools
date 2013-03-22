@@ -17,8 +17,8 @@ Vehicle.prototype = {
             return false;
         }
         var point = new OpenLayers.Geometry.Point(coordinates.longitude, coordinates.latitude);
-        point.transform(new OpenLayers.Projection('EPSG:4326'), new OpenLayers.Projection(this.parent.Map.getProjectionObject()));
+        point.transform(new OpenLayers.Projection(attributes.projection), new OpenLayers.Projection(this.parent.Map.getProjectionObject()));
         layer.addFeatures(new OpenLayers.Feature.Vector(point, attributes));
         return true;
     }
-}
+};
