@@ -10,8 +10,6 @@ var defaultOptions = {
         theme: '../css/open-layers.tidy.css',
         displayProjection: "EPSG:4326",
         imgPath: '../images/OpenLayers/',
-        //TODO BUG: don't work initial center on map coordinates
-        center: new OpenLayers.LonLat(32.25366, 48.51982),
-        zoom: 10
+        zoom: 16
     }
 }

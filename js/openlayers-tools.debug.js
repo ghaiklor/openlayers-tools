@@ -6,6 +6,10 @@ function OpenLayersTools(mapOptions) {
     this.MapOptions = this.BaseFunc.extendConfigFromDefault(mapOptions, defaultOptions.mapOptions);
     this.Map = new OpenLayers.Map(this.MapOptions);
 
+    OpenLayers.ImgPath = this.MapOptions.imgPath;
+
+    this.BaseFunc.centerMap(32.25366, 48.51982, 'EPSG:4326');
+
     return this;
 }
 

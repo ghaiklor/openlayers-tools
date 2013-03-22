@@ -49,28 +49,27 @@ var Core = {
 
         this.Objects.OpenLayersTools = new OpenLayersTools();
         this.Objects.OpenLayersTools.checkModule();
-        //TODO BUG: don't load images from images/OpenLayers.
-        /*        this.Objects.OpenLayersTools.Control.addControls({
-         LayerSwitcher: {
-         controlType: 'LayerSwitcher',
-         roundedCorner: true
-         },
-         MousePosition: {
-         controlType: 'MousePosition'
-         },
-         PanZoomBar: {
-         controlType: 'PanZoomBar'
-         },
-         Navigation: {
-         controlType: 'Navigation'
-         },
-         ArgParser: {
-         controlType: 'ArgParser'
-         },
-         Attribution: {
-         controlType: 'Attribution'
-         }
-         });*/
+        this.Objects.OpenLayersTools.Control.addControls({
+            LayerSwitcher: {
+                controlType: 'LayerSwitcher',
+                roundedCorner: true
+            },
+            MousePosition: {
+                controlType: 'MousePosition'
+            },
+            PanZoomBar: {
+                controlType: 'PanZoomBar'
+            },
+            Navigation: {
+                controlType: 'Navigation'
+            },
+            ArgParser: {
+                controlType: 'ArgParser'
+            },
+            Attribution: {
+                controlType: 'Attribution'
+            }
+        });
     }
 };
 
