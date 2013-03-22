@@ -11,5 +11,10 @@ var defaultOptions = {
         displayProjection: "EPSG:4326",
         imgPath: '../images/OpenLayers/',
         zoom: 16
+    },
+    vehicleOptions: {
+        label: 'default',
+        id: 'default',
+        display: ''
     }
 }

@@ -47,7 +47,9 @@ var Core = {
         this.Objects.ApplicationEvents = new ApplicationEvents();
         this.Objects.ApplicationEvents.bindAllEvents();
 
-        this.Objects.OpenLayersTools = new OpenLayersTools();
+        this.Objects.OpenLayersTools = new OpenLayersTools({
+            controls: []
+        });
         this.Objects.OpenLayersTools.checkModule();
         this.Objects.OpenLayersTools.Control.addControls({
             LayerSwitcher: {

@@ -19,5 +19,20 @@ BaseFunc.prototype = {
         var point = new OpenLayers.LonLat(lon, lat);
         point.transform(new OpenLayers.Projection(projection), this.parent.Map.getProjectionObject());
         this.parent.Map.moveTo(point);
+    },
+    bindEventToObject: function (object, listeners) {
+        if (object.events == undefined) {
+            this.parent.Console.writeError('Func: bindEventToObject | Object don\'t have events callbacks!');
+            return false;
+        }
+        object.events.on(listeners);
+        return true;
+    },
+    checkUndefined: function (object) {
+        if (object == undefined || object == null || object == '') {
+            return true;
+        } else {
+            return false;
+        }
     }
 };
