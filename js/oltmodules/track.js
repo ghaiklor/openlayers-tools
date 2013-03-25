@@ -49,5 +49,37 @@ Track.prototype = {
             layer.addFeatures(feature);
         }
         return true;
+    },
+    removeTrack: function (layerName, trackId) {
+        var layer = this.parent.Layer.getLayerByName(layerName);
+        if (this.parent.BaseFunc.checkUndefined(layer) || !layer) {
+            this.parent.Console.writeError('Func: removeTrack | Layer ' + layerName + 'does\'t exists!');
+            return false;
+        }
+        var feature = this.parent.Layer.getFeatureById(layerName, trackId);
+        if (this.parent.BaseFunc.checkUndefined(feature) || !feature) {
+            this.parent.Console.writeError('Func: removeTrack | Layer ' + layerName + 'doesn\'t have features with id ' + trackId);
+            return false;
+        }
+        layer.removeFeatures(feature);
+        return true;
+    },
+    visibilityTrack: function (layerName, trackId, visibility) {
+        var layer = this.parent.Layer.getLayerByName(layerName);
+        if (this.parent.BaseFunc.checkUndefined(layer) || !layer) {
+            this.parent.Console.writeError('Func: removeTrack | Layer ' + layerName + 'does\'t exists!');
+            return false;
+        }
+        var feature = this.parent.Layer.getFeatureById(layerName, trackId);
+        if (this.parent.BaseFunc.checkUndefined(feature) || !feature) {
+            this.parent.Console.writeError('Func: removeTrack | Layer ' + layerName + 'doesn\'t have features with id ' + trackId);
+            return false;
+        }
+        if (visibility) {
+            feature.attributes.display = '';
+        } else {
+            feature.attributes.display = 'none';
+        }
+        return true;
     }
 };

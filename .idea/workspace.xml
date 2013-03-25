@@ -1,32 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" name="Default" comment="Added new functions: moveVehicle, removeVehicle, setVisibilityVehicle, buildTrack.&#10;Added new Class - Track.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/oltmodules/track.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/application.js" afterPath="$PROJECT_DIR$/js/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/oltmodules/basefunc.js" afterPath="$PROJECT_DIR$/js/oltmodules/basefunc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/oltmodules/default-options.js" afterPath="$PROJECT_DIR$/js/oltmodules/default-options.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/openlayers-tools.debug.js" afterPath="$PROJECT_DIR$/js/openlayers-tools.debug.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/oltmodules/vehicle.js" afterPath="$PROJECT_DIR$/js/oltmodules/vehicle.js" />
+    <list default="true" id="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" name="Default" comment="Added new function removeTrack and visibilityTrack.">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/oltmodules/track.js" afterPath="$PROJECT_DIR$/js/oltmodules/track.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="openlayers-tools.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363949837489" ignored="false" />
+    <file path="/Dummy.txt" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1364209020655" ignored="false" />
     <file path="/README.md" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363897407233" ignored="false" />
-    <file path="/index.html" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363947073156" ignored="false" />
+    <file path="/index.html" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1364206837126" ignored="false" />
     <file path="/openlayers-tools.debug.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363947045861" ignored="false" />
     <file path="/application.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363944648710" ignored="false" />
     <file path="/layer.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363871262161" ignored="false" />
     <file path="/styles.css" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363900125485" ignored="false" />
-    <file path="/basefunc.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363946961521" ignored="false" />
+    <file path="/basefunc.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1364203509717" ignored="false" />
     <file path="/console.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363869090767" ignored="false" />
     <file path="/open-layers.tidy.css" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363869981082" ignored="false" />
     <file path="/control.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363873091819" ignored="false" />
     <file path="/default-options.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363948642866" ignored="false" />
     <file path="/vehicle.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363946829684" ignored="false" />
-    <file path="/track.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1363949584812" ignored="false" />
+    <file path="/track.js" changelist="f3925b5e-8ad0-47d8-986a-b35f1f21ee28" time="1364208985894" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +52,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="60" selection-start="1670" selection-end="1670" vertical-scroll-proportion="2.25">
+            <state line="47" column="60" selection-start="1670" selection-end="1670" vertical-scroll-proportion="-15.25">
               <folding />
             </state>
           </provider>
@@ -91,19 +85,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="basefunc.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="basefunc.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/oltmodules/basefunc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="4" selection-start="1288" selection-end="1288" vertical-scroll-proportion="0.7631579">
+            <state line="36" column="41" selection-start="1325" selection-end="1325" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="track.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="track.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/oltmodules/track.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="63" selection-start="2550" selection-end="2550" vertical-scroll-proportion="0.0">
+            <state line="55" column="75" selection-start="3339" selection-end="3339" vertical-scroll-proportion="0.2956989">
               <folding />
             </state>
           </provider>
@@ -171,19 +165,18 @@
         <option value="$PROJECT_DIR$/js/oltmodules/vehicle.js" />
         <option value="$PROJECT_DIR$/js/application.js" />
         <option value="$PROJECT_DIR$/js/openlayers-tools.debug.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/oltmodules/default-options.js" />
-        <option value="$PROJECT_DIR$/js/oltmodules/track.js" />
         <option value="$PROJECT_DIR$/js/oltmodules/basefunc.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/oltmodules/track.js" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="y" value="27" />
-    <option name="width" value="1368" />
-    <option name="height" value="742" />
+    <option name="x" value="-3" />
+    <option name="width" value="1372" />
+    <option name="height" value="745" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -221,7 +214,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -232,61 +225,7 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openlayers-tools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openlayers-tools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openlayers-tools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openlayers-tools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openlayers-tools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openlayers-tools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openlayers-tools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="oltmodules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
@@ -296,20 +235,6 @@
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
-  </component>
-  <component name="PublishConfig">
-    <servers>
-      <server id="d04b5d5a-9919-45a3-bb40-1c7d9a9082e8">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" />
-          </mappings>
-        </serverdata>
-      </server>
-      <server id="f3d8e5f7-3c55-414b-8c1b-ad6559dbe0ad">
-        <serverdata />
-      </server>
-    </servers>
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -446,10 +371,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="27" width="1368" height="742" extended-state="6" />
+    <frame x="-3" y="0" width="1372" height="745" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.327212" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -511,7 +436,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new functions: moveVehicle, removeVehicle, setVisibilityVehicle, buildTrack.&#10;Added new Class - Track." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new function removeTrack and visibilityTrack." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -538,6 +463,7 @@
     <MESSAGE value="Realized func to Adding Vehicle Marker on Map." />
     <MESSAGE value="Realized demoFunc for adding vehicles on Map." />
     <MESSAGE value="Added new functions: moveVehicle, removeVehicle, setVisibilityVehicle, buildTrack.&#10;Added new Class - Track." />
+    <MESSAGE value="Added new function removeTrack and visibilityTrack." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -571,16 +497,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="154" selection-end="154" vertical-scroll-proportion="0.078947365">
-          <folding />
-        </state>
+        <state line="3" column="0" selection-start="154" selection-end="154" vertical-scroll-proportion="0.078947365" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="14" selection-start="2316" selection-end="2316" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="70" column="14" selection-start="2316" selection-end="2316" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/oltmodules/control.js">
@@ -611,23 +533,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="60" selection-start="1670" selection-end="1670" vertical-scroll-proportion="2.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/oltmodules/default-options.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="30" selection-start="809" selection-end="809" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/oltmodules/track.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="63" selection-start="2550" selection-end="2550" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -648,7 +556,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/oltmodules/basefunc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="4" selection-start="1288" selection-end="1288" vertical-scroll-proportion="0.7631579">
+        <state line="36" column="41" selection-start="1325" selection-end="1325" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="60" selection-start="1670" selection-end="1670" vertical-scroll-proportion="-15.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/oltmodules/track.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="75" selection-start="3339" selection-end="3339" vertical-scroll-proportion="0.2956989">
           <folding />
         </state>
       </provider>
