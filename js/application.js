@@ -1,9 +1,11 @@
 function OpenLayersApplication() {
+    this.vehicles = [];
     return this;
 }
 
 OpenLayersApplication.prototype = {
     addRandomVehicle: function () {
+        var vehicleslist = $('#vehicles-list-select');
         var longitude = Math.random() * (50 - 20) + 20;
         var latitude = Math.random() * (50 - 20) + 20;
         var id = Math.floor(Math.random() * 1000000);
@@ -15,6 +17,15 @@ OpenLayersApplication.prototype = {
             label: 'Testing Vehicle ' + id
         });
         Core.Objects.OpenLayersTools.BaseFunc.centerMap(longitude, latitude, 'EPSG:4326');
+        this.vehicles[id] = {
+            id: id,
+            longitude: longitude,
+            latitude: latitude
+        };
+        if ($(vehicleslist).find('option').first().html() == 'Список пуст...') {
+            $(vehicleslist).html('');
+        }
+        $(vehicleslist).append($('<option value="id">' + id + '</option>'))
     }
 };
 
@@ -24,6 +35,21 @@ function ApplicationEvents() {
 }
 
 ApplicationEvents.prototype = {
+    menuItemOnClick: function (obj) {
+        $(obj).closest('li').siblings().removeClass('active-menu-item');
+        $(obj).closest('li').addClass('active-menu-item');
+        $('.left-panel > div').css('display', 'none');
+        switch ($(obj).data('menu-item')) {
+            case 'vehicles':
+                $('.vehicles-demo').css('display', '');
+                break;
+            case 'tracks':
+                $('.tracks-demo').css('display', '');
+                break;
+            default:
+                break;
+        }
+    },
     addRandomVehicleButtonOnClick: function () {
         Core.Objects.OpenLayersApplication.addRandomVehicle();
     },
@@ -31,6 +57,9 @@ ApplicationEvents.prototype = {
         var self = this;
         $('#' + this.idAddRandomVehicleButton).click(function () {
             self.addRandomVehicleButtonOnClick();
+        });
+        $('.header li a').click(function () {
+            self.menuItemOnClick($(this));
         });
         $(window).resize(function () {
             Core.RecalcDOMSize();
@@ -81,7 +110,6 @@ var Core = {
         this.Objects.OpenLayersTools = new OpenLayersTools({
             controls: []
         });
-//        this.Objects.OpenLayersTools.checkModule();
         this.Objects.OpenLayersTools.Control.addControls({
             LayerSwitcher: {
                 controlType: 'LayerSwitcher',
@@ -107,10 +135,13 @@ var Core = {
             styleMap: {
                 default: {
                     display: '${display}',
-                    label: '${label}'
+                    label: '${label}',
+                    externalGraphic: '${externalGraphic}'
                 }
             }
-        })
+        });
+        $('.left-panel > div').css('display', 'none');
+        $('.vehicles-demo').css('display', '');
     }
 };
 

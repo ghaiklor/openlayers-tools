@@ -9,18 +9,39 @@
 <body>
 <div class="header">
     <ul id="header-menu" class="header-menu">
-        <li>
-            Test
+        <li class="active-menu-item">
+            <a href="#" data-menu-item="vehicles">Транспортные средства</a>
         </li>
         <li>
-            Test 2
+            <a href="#" data-menu-item="tracks">Треки</a>
         </li>
     </ul>
 </div>
 <div class="main-container" id="main-container">
     <div class="left-panel" id="left-panel">
         <div class='vehicles-demo'>
-            <button id="addRandomVehicle">Добавить случайное ТС</button>
+            <fieldset>
+                <legend>
+                    Транспортные средства
+                </legend>
+                <button id="addRandomVehicle">Добавить случайное ТС</button>
+                <label>
+                    Выберите ТС:
+                    <select size='5' id="vehicles-list-select">
+                        <option>Список пуст...</option>
+                    </select>
+                </label>
+            </fieldset>
+        </div>
+        <div class="tracks-demo">
+            <fieldset>
+                <legend>
+                    Треки
+                </legend>
+                <button>
+                    Сгенерировать рандомный трек
+                </button>
+            </fieldset>
         </div>
     </div>
     <div class="map-panel" id="map-panel">

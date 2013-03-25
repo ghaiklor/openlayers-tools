@@ -30,14 +30,14 @@ html, body {
     position: absolute;
     top: 0;
     left: 0;
-    box-shadow: 0px 3px 4px 0px #000000;
+    box-shadow: 0 3px 4px 0 #000000;
 }
 
 .footer {
     position: absolute;
     bottom: 0;
     left: 0;
-    box-shadow: 0px -3px 4px 0px #000000;
+    box-shadow: 0 -3px 4px 0 #000000;
     text-align: center;
     line-height: 30px;
 }
@@ -64,6 +64,7 @@ html, body {
     width: 200px;
     box-shadow: 4px 0 4px 0 #000000;
     float: left;
+    text-align: center;
 }
 
 .map-panel {
@@ -73,4 +74,29 @@ html, body {
 
 .spacer {
     clear: both;
+}
+
+.header li {
+    margin: 7px;
+}
+
+.header li a {
+    color: white;
+    text-decoration: none;
+}
+
+.active-menu-item {
+    box-shadow: 0 2px 3px -2px lightgreen;
+}
+
+fieldset legend {
+    margin-left: 10px;
+}
+
+fieldset {
+    padding: 5px;
+}
+
+#vehicles-list-select {
+    margin-top: 10px;
 }
