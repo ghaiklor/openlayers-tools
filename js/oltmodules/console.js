@@ -1,3 +1,6 @@
+/*
+ Class: Console
+ */
 function Console(parent) {
     this.debugMode = true;
     this.parent = parent;

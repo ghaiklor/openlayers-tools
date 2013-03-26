@@ -1,3 +1,6 @@
+/*
+ Class: Vehicle
+ */
 function Vehicle(parent) {
     this.parent = parent;
     return this;

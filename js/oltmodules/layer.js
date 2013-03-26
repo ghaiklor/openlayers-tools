@@ -1,3 +1,6 @@
+/*
+ Class: Layer
+ */
 function Layer(parent) {
     this.parent = parent;
     return this;

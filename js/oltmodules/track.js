@@ -1,3 +1,6 @@
+/*
+ Class: Track
+ */
 function Track(parent) {
     this.parent = parent;
     return this;

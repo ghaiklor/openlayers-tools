@@ -1,3 +1,6 @@
+/*
+ Class: Control
+ */
 function Control(parent) {
     this.parent = parent;
     this.controls = [];

@@ -1,3 +1,6 @@
+/*
+ Class: OpenLayersTools
+ */
 function OpenLayersTools(mapOptions) {
     this.BaseFunc = new BaseFunc(this);
     this.Console = new Console(this);
