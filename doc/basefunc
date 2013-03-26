@@ -1,0 +1,57 @@
+1) Український;
+2) Русский;
+3) English;
+
+Український
+======================================
+OpenLayersTools.BaseFunc.extendConfigFromDefault(existsConfig, defaultConfig) — функція розширює існуючий об'єкт параметрів, доповнюючи його параметрами по замовчуванню. Функція перевіряє об'єкт existsConfig на не задані обов'язкові параметри з об'єкту defaultConfig та доповнює його.
+
+Параметри:
+(object)existsConfig — об'єкт, який містить в собі параметри, які необхідно розширити.
+(object)defaultConfig — об'єкт, в котрому містяться параметри по замовчуванню.
+
+Вертає:
+об'єкт, в котрому зберігаються доповнення з об'єкту defaultConfig та existsConfig.
+--------------------
+OpenLayersTools.BaseFunc.centerMap(lon, lat, projection) — функція центрує карту на координатах (lon, lat), які задані в проекції projection.
+
+Параметри:
+(float)lon — координата ширини (longitude)
+(float)lat — координата довготи (latitude)
+(string)projection — в якій проекції задані координати
+
+Вертає:
+(boolean) — якщо операція виконана успішно, то вертає true.
+--------------------
+OpenLayersTools.BaseFunc.bindEventToObject(object, listeners) — функція реєструє обробники подій на об'єкті.
+
+Параметри:
+(object)object — об'єкт, на котрий потрібно зареєструвати обробники подій.
+(object)listeners — об'єкт, в котрому зберігаються функції по обробці подій. Індексом є (string)тип події, при котрому повинна спрацювати функція, котра зберігається в значенні індексу (function).
+
+Вертає:
+(boolean) — якщо операція виконана успішно, то вертає true.
+--------------------
+OpenLayersTools.BaseFunc.checkUndefined(object) — функція перевіряє на невизначеність об'єкту.
+
+Параметри:
+(object)object — люба змінна, котру потрібно перевірити на невизначеність.
+
+Вертає:
+(boolean) — якщо об'єкт невизначений, то вертає true. Якщо визначений, то false.
+--------------------
+OpenLayersTools.BaseFunc.geometryToString(geometry) — функція переводить (OpenLayers.Geometry)геометрію об'єкта в (string)WKT(Well-Known-Text).
+
+Параметри:
+(OpenLayers.Geomety)geometry — геометрія, котру потрібно перевести в текст WKT.
+
+Вертає:
+(string) — текстове представлення геометрії об'єкту (WKT).
+--------------------
+OpenLayersTools.BaseFunc.stringToGeometry(string) — функція переводить з WKT в геометрію об'єкта.
+
+Параметри:
+(string)string — WKT геометрії, з котрої потрібно створити геометрію.
+
+Вертає:
+(OpenLayers.Geometry) — об'єкт геометрії.

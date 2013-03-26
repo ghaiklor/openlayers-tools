@@ -1,0 +1,34 @@
+1) Український;
+2) Русский;
+3) English;
+
+Український
+======================================
+OpenLayersTools.Track.buildTrack(layerName, coordinates, attributes) — функція будує трек та зображує його на шарі.
+
+Параметри:
+(string)layerName — ямі шару, на якому потрібно здійснити зображення треку.
+(array)coordinates — масив, елементами якого є об'єкт. В кожному об'єкті повинні бути вказані координати (longitude та latitude).
+(object)attributes — атрибути треку.
+
+Вертає:
+(boolean) — якщо трек побудовано успішно, вертає true.
+--------------------
+OpenLayersTools.Track.removeTrack(layerName, trackId) — функція видаляє трек з шару.
+
+Параметри:
+(string)layerName — ямі шару, з якого потрібно здійснити видалення треку.
+(integer)trackId — ідентифікатор треку, котрий потрібно видалити.
+
+Вертає:
+(boolean) — якщо видалення успішне, вертає true.
+--------------------
+OpenLayersTools.Track.visibilityTrack(layerName, trackId, visibility) — функція зображує чи сховує трек з шару.
+
+Параметри:
+(string)layerName — ямі шару, на якому потрібно сховати чи зобразити трек.
+(integer)trackId — ідентифікатор треку, який потрібно сховати\зобразити.
+(boolean)visibility — якщо visibility рівне true, то трек зображується. В інакшому випадку сховується.
+
+Вертає:
+(boolean) — якщо виставлення прапорця успішне, вертає true.
