@@ -100,6 +100,9 @@ var Core = {
         })
     },
     EntryPoint: function () {
+        $('.left-panel > div').css('display', 'none');
+        $('.vehicles-demo').css('display', '');
+
         this.RecalcDOMSize();
 
         this.Objects.ApplicationEvents = new ApplicationEvents();
@@ -140,8 +143,6 @@ var Core = {
                 }
             }
         });
-        $('.left-panel > div').css('display', 'none');
-        $('.vehicles-demo').css('display', '');
     }
 };
 

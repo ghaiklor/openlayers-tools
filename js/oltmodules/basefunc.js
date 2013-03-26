@@ -19,6 +19,7 @@ BaseFunc.prototype = {
         var point = new OpenLayers.LonLat(lon, lat);
         point.transform(new OpenLayers.Projection(projection), this.parent.Map.getProjectionObject());
         this.parent.Map.moveTo(point);
+        return true;
     },
     bindEventToObject: function (object, listeners) {
         if (object.events == undefined) {

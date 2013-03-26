@@ -46,7 +46,7 @@ Vehicle.prototype = {
         layer.removeFeatures(feature);
         return true;
     },
-    setVisibilityVehicle: function (layerName, vehicleId, visibility) {
+    visibilityVehicle: function (layerName, vehicleId, visibility) {
         var layer = this.parent.Layer.getLayerByName(layerName);
         if (this.parent.BaseFunc.checkUndefined(layer) || !layer) {
             this.parent.Console.writeError('Func: removeVehicle | Layer ' + layerName + ' doesn\'t exists!');
