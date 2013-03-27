@@ -1,5 +1,13 @@
 /*
  Class: Layer
+ Implements all the methods for working with layers of OpenLayers.
+ */
+/*
+ Constructor: Layer
+ Initialize the object of Layer.
+
+ Parameters:
+ parent - Object that is the parent of this class.
  */
 function Layer(parent) {
     this.parent = parent;
@@ -7,6 +15,16 @@ function Layer(parent) {
 }
 
 Layer.prototype = {
+    /*
+     Function: addMap
+     Creates the map elements and adds them to OpenLayers.
+
+     Parameters:
+     maps - Object which specifies a list of maps that are to be added to OpenLayers.
+
+     Returns:
+     TRUE if function successful.
+     */
     addMap: function (maps) {
         var layers = [];
         for (var map in maps) {
@@ -66,6 +84,17 @@ Layer.prototype = {
             return false;
         }
     },
+    /*
+     Function: addVectorLayer
+     Adding a custom layer to OpenLayers.
+
+     Parameters:
+     name - Name of a custom layer.
+     config - The object with the parameters of the user layer.
+
+     Returns:
+     TRUE if function successful.
+     */
     addVectorLayer: function (name, config) {
         var parent = this.parent;
 
@@ -94,6 +123,16 @@ Layer.prototype = {
         this.parent.Map.addLayer(new OpenLayers.Layer.Vector(name, config));
         return true;
     },
+    /*
+     Function: getLayerByName
+     Seeking layer in OpenLayers and returns a single layer.
+
+     Parameters:
+     name - The name of the layer.
+
+     Returns:
+     OpenLayers.Layer
+     */
     getLayerByName: function (name) {
         var layer = this.parent.Map.getLayersByName(name)[0];
         if (layer == undefined) {
@@ -102,6 +141,16 @@ Layer.prototype = {
         }
         return layer;
     },
+    /*
+     Function: getLayersByName
+     Seeking layer in OpenLayers and returns array of layers.
+
+     Parameters:
+     name - The name of the layer.
+
+     Returns:
+     Array of OpenLayers.Layer.
+     */
     getLayersByName: function (name) {
         var layers = this.parent.Map.getLayersByName(name);
         if (layers == undefined) {
@@ -110,6 +159,17 @@ Layer.prototype = {
         }
         return layers;
     },
+    /*
+     Function: getFeatureById
+     Takes out the element layer and return it.
+
+     Parameters:
+     layerName - Layer name from which to take the element layer.
+     id - ID of the control to be found.
+
+     Returns:
+     OpenLayers.Feature.
+     */
     getFeatureById: function (layerName, id) {
         var layer = this.getLayerByName(layerName);
         if (layer == undefined) {
@@ -128,6 +188,17 @@ Layer.prototype = {
             }
         }
     },
+    /*
+     Function: getFeaturesById
+     Takes out the element layer and return array of OpenLayers.Feature.
+
+     Parameters:
+     layerName - Layer name from which to take the elements layer.
+     id - ID of the controls to be found.
+
+     Returns:
+     Array of OpenLayers.Feature.
+     */
     getFeaturesById: function (layerName, id) {
         var layer = this.getLayerByName(layerName);
         var features = [];

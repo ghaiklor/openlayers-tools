@@ -1,8 +1,20 @@
 /*
  Class: Control
+ Implements methods for working with controls of OpenLayers.
+ */
+/*
+ Constructor: Control
+ Create an object of Control.
+
+ Parameters:
+ parent - Object that is the parent of this class.
  */
 function Control(parent) {
     this.parent = parent;
+    /*
+     Variable: controls
+     In this array are stored by all controls of OpenLayers.
+     */
     this.controls = [];
     return this;
 }
@@ -12,6 +24,13 @@ Control.prototype = {
         this.parent.Map.addControl(control);
         this.controls[index] = control;
     },
+    /*
+     Function: addControls
+     Function creates and adds controls to the OpenLayers.
+
+     Parameters:
+     controls - An object with a list of the necessary controls and their parameters.
+     */
     addControls: function (controls) {
         for (var control in controls) {
             if (controls[control].controlType == undefined) {
