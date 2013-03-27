@@ -97,6 +97,26 @@ fieldset {
     padding: 5px;
 }
 
-#vehicles-list-select {
-    margin-top: 10px;
+.vehicles-list-container {
+    text-align: left;
+}
+
+.vehicles-list-container > ul {
+    list-style: none outside none;
+}
+
+#vehicles-list > li {
+    border: 1px solid lightsalmon;
+    display: inline-block;
+    margin: 5px 0;
+    line-height: 30px;
+    width: 100%;
+}
+
+.vehicles-list-buttons {
+    float: right;
+}
+
+#vehicles-list li > a {
+    margin-left: 10px;
 }

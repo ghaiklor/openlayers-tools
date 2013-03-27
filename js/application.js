@@ -4,8 +4,34 @@ function OpenLayersApplication() {
 }
 
 OpenLayersApplication.prototype = {
+    moveVehicle: function (id) {
+        var result = window.prompt('Введите новые координаты:', '32.25366,48.51982').split(',');
+        this.vehicles[id] = {
+            longitude: result[0],
+            latitude: result[1]
+        };
+        Core.Objects.OpenLayersTools.Vehicle.moveVehicle('Транспортные средства', id, {
+            longitude: this.vehicles[id].longitude,
+            latitude: this.vehicles[id].latitude
+        });
+    },
+    removeVehicle: function (id) {
+        Core.Objects.OpenLayersTools.Vehicle.removeVehicle('Транспортные средства', id);
+        this.vehicles[id] = {};
+        $('#vehicle-' + id).remove();
+    },
+    visibilityVehicle: function (obj, id) {
+        if ($(obj).is(':checked')) {
+            Core.Objects.OpenLayersTools.Vehicle.visibilityVehicle('Транспортные средства', id, true);
+        } else {
+            Core.Objects.OpenLayersTools.Vehicle.visibilityVehicle('Транспортные средства', id, false);
+        }
+    },
+    centerVehicle: function (id) {
+        Core.Objects.OpenLayersTools.BaseFunc.centerMap(this.vehicles[id].longitude, this.vehicles[id].latitude, 'EPSG:4326');
+    },
     addRandomVehicle: function () {
-        var vehicleslist = $('#vehicles-list-select');
+        var vehicleslist = $('#vehicles-list');
         var longitude = Math.random() * (50 - 20) + 20;
         var latitude = Math.random() * (50 - 20) + 20;
         var id = Math.floor(Math.random() * 1000000);
@@ -14,7 +40,9 @@ OpenLayersApplication.prototype = {
             latitude: latitude
         }, {
             id: id,
-            label: 'Testing Vehicle ' + id
+            label: 'Testing Vehicle ' + id,
+            display: '',
+            externalGraphic: './../../images/car.png'
         });
         Core.Objects.OpenLayersTools.BaseFunc.centerMap(longitude, latitude, 'EPSG:4326');
         this.vehicles[id] = {
@@ -22,10 +50,7 @@ OpenLayersApplication.prototype = {
             longitude: longitude,
             latitude: latitude
         };
-        if ($(vehicleslist).find('option').first().html() == 'Список пуст...') {
-            $(vehicleslist).html('');
-        }
-        $(vehicleslist).append($('<option value="id">' + id + '</option>'))
+        $(vehicleslist).append($('<li id="vehicle-' + id + '"><input type="checkbox" checked="checked" onclick="Core.Objects.OpenLayersApplication.visibilityVehicle($(this), ' + id + ');"/><a href="#" data-vehicle-id="' + id + '" onclick="Core.Objects.OpenLayersApplication.centerVehicle(' + id + ')">ID: ' + id + '</a><div class="vehicles-list-buttons"><a href="#" onclick="Core.Objects.OpenLayersApplication.moveVehicle(' + id + ')"><img src="./../images/move.png" alt="Move Vehicle" title="Передвинуть ТС"/></a><a href="#" onclick="Core.Objects.OpenLayersApplication.removeVehicle(' + id + ')"><img src="./../images/delete.png" alt="Remove Vehicle" title="Удалить ТС"/></a></div></li><div class="spacer"></div>'));
     }
 };
 
@@ -139,7 +164,10 @@ var Core = {
                 default: {
                     display: '${display}',
                     label: '${label}',
-                    externalGraphic: '${externalGraphic}'
+                    externalGraphic: '${externalGraphic}',
+                    graphicWidth: 32,
+                    graphicHeight: 32,
+                    graphicYOffset: -50
                 }
             }
         });
