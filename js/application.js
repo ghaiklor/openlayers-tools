@@ -159,6 +159,9 @@ var Core = {
                 controlType: 'Attribution'
             }
         });
+        this.Objects.OpenLayersTools.Layer.addMap({
+            'Google Maps': 'Google Streets'
+        });
         this.Objects.OpenLayersTools.Layer.addVectorLayer('Транспортные средства', {
             styleMap: {
                 default: {

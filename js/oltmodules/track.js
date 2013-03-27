@@ -29,6 +29,11 @@ Track.prototype = {
 
      Returns:
      TRUE if function successful.
+
+     Usage:
+     (start code)
+     Coming soon...
+     (end code)
      */
     buildTrack: function (layerName, coordinates, attributes) {
         if (this.parent.BaseFunc.checkUndefined(coordinates) || coordinates.length == 0) {
@@ -86,6 +91,11 @@ Track.prototype = {
 
      Returns:
      TRUE if function successful.
+
+     Usage:
+     (start code)
+     Coming soon...
+     (end code)
      */
     removeTrack: function (layerName, trackId) {
         var layer = this.parent.Layer.getLayerByName(layerName);
@@ -112,6 +122,11 @@ Track.prototype = {
 
      Returns:
      TRUE if function successful.
+
+     Usage:
+     (start code)
+     Coming soon...
+     (end code)
      */
     visibilityTrack: function (layerName, trackId, visibility) {
         var layer = this.parent.Layer.getLayerByName(layerName);

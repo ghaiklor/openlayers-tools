@@ -27,6 +27,13 @@ Layer.prototype = {
 
      Returns:
      TRUE if function successful.
+
+     Usage:
+     (start code)
+     OpenLayersTools.Layer.addMap({
+     'Google Maps': 'Google Streets'
+     });
+     (end code)
      */
     addMap: function (maps) {
         var layers = [];
@@ -97,6 +104,22 @@ Layer.prototype = {
 
      Returns:
      TRUE if function successful.
+
+     Usage:
+     (start code)
+     OpenLayersTools.Layer.addVectorLayer('Транспортные средства', {
+     styleMap: {
+     default: {
+     display: '${display}',
+     label: '${label}',
+     externalGraphic: '${externalGraphic}',
+     graphicWidth: 32,
+     graphicHeight: 32,
+     graphicYOffset: -50
+     }
+     }
+     });
+     (end code)
      */
     addVectorLayer: function (name, config) {
         var parent = this.parent;
@@ -134,7 +157,12 @@ Layer.prototype = {
      name - The name of the layer.
 
      Returns:
-     OpenLayers.Layer
+     OpenLayers.Layer.
+
+     Usage:
+     (start code)
+     OpenLayersTools.Layer.getLayerByName(layerName);
+     (end code)
      */
     getLayerByName: function (name) {
         var layer = this.parent.Map.getLayersByName(name)[0];
@@ -153,6 +181,11 @@ Layer.prototype = {
 
      Returns:
      Array of OpenLayers.Layer.
+
+     Usage:
+     (start code)
+     OpenLayersTools.Layer.getLayersByName(layerName);
+     (end code)
      */
     getLayersByName: function (name) {
         var layers = this.parent.Map.getLayersByName(name);
@@ -172,6 +205,11 @@ Layer.prototype = {
 
      Returns:
      OpenLayers.Feature.
+
+     Usage:
+     (start code)
+     OpenLayersTools.Layer.getFeatureById(layerName, id);
+     (end code)
      */
     getFeatureById: function (layerName, id) {
         var layer = this.getLayerByName(layerName);
@@ -202,6 +240,11 @@ Layer.prototype = {
 
      Returns:
      Array of OpenLayers.Feature.
+
+     Usage:
+     (start code)
+     OpenLayersTools.Layer.getFeatureById(layerName, id);
+     (end code)
      */
     getFeaturesById: function (layerName, id) {
         var layer = this.getLayerByName(layerName);
