@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="css/open-layers.tidy.css"/>
+    <title>OpenLayersTools - Main Page</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+<div class="header">
+    <ul id="header-menu" class="header-menu">
+        <li class="active-menu-item">
+            <a href="#" data-menu-item="vehicles">Транспортные средства</a>
+        </li>
+        <li>
+            <a href="#" data-menu-item="tracks">Треки</a>
+        </li>
+    </ul>
+</div>
+<div class="main-container" id="main-container">
+    <div class="left-panel" id="left-panel">
+        <div class='vehicles-demo'>
+            <fieldset>
+                <legend>
+                    Транспортные средства
+                </legend>
+                <button id="addRandomVehicle">Добавить случайное ТС</button>
+                <label>
+                    Выберите ТС:
+                    <select size='5' id="vehicles-list-select">
+                        <option>Список пуст...</option>
+                    </select>
+                </label>
+            </fieldset>
+        </div>
+        <div class="tracks-demo">
+            <fieldset>
+                <legend>
+                    Треки
+                </legend>
+                <button>
+                    Сгенерировать рандомный трек
+                </button>
+            </fieldset>
+        </div>
+    </div>
+    <div class="map-panel" id="map-panel">
+        <div class="map" id="map"></div>
+    </div>
+</div>
+<div class="footer">
+    <span>Идея, разработка: Обрезков Евгений &#169;2013</span>
+</div>
+
+<script type="text/javascript" src="js/lib/jquery-1.9.1.min.js"></script>
+
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNKpdMOa4yLweNWNdAGvagK13ZNMpMRWM&sensor=false">
+</script>
+
+<script type="text/javascript" src="js/lib/OpenLayers.js"></script>
+
+<script type="text/javascript" src="js/oltmodules/default-options.js"></script>
+<script type="text/javascript" src="js/oltmodules/basefunc.js"></script>
+<script type="text/javascript" src="js/oltmodules/console.js"></script>
+<script type="text/javascript" src="js/oltmodules/layer.js"></script>
+<script type="text/javascript" src="js/oltmodules/control.js"></script>
+<script type="text/javascript" src="js/oltmodules/vehicle.js"></script>
+<script type="text/javascript" src="js/oltmodules/track.js"></script>
+
+<script type="text/javascript" src="js/openlayers-tools.debug.js"></script>
+
+<script type="text/javascript" src="js/application.js"></script>
+</body>
+</html>

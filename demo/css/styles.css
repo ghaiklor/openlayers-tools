@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    overflow: hidden;
+    font-size: .9em;
+    height: 100%;
+    background: #eeeeee; /* Old browsers */
+    background: -moz-linear-gradient(top, #eeeeee 0%, #cccccc 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, #cccccc)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #eeeeee 0%, #cccccc 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #eeeeee 0%, #cccccc 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #eeeeee 0%, #cccccc 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #eeeeee 0%, #cccccc 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc', GradientType=0); /* IE6-9 */
+}
+
+.header, .footer {
+    width: 100%;
+    height: 30px;
+}
+
+.header ul li {
+    display: inline-block;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 3px 4px 0 #000000;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 -3px 4px 0 #000000;
+    text-align: center;
+    line-height: 30px;
+}
+
+.header, .footer {
+    background: #8c8c8c; /* Old browsers */
+    background: -moz-linear-gradient(top, #8c8c8c 0%, #474747 39%, #4f4f4f 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8c8c8c), color-stop(39%, #474747), color-stop(100%, #4f4f4f)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #8c8c8c 0%, #474747 39%, #4f4f4f 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #8c8c8c 0%, #474747 39%, #4f4f4f 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #8c8c8c 0%, #474747 39%, #4f4f4f 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #8c8c8c 0%, #474747 39%, #4f4f4f 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8c8c8c', endColorstr='#4f4f4f', GradientType=0); /* IE6-9 */
+}
+
+.main-container {
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+}
+
+.left-panel {
+    padding: 10px 5px 10px 5px;
+    width: 200px;
+    box-shadow: 4px 0 4px 0 #000000;
+    float: left;
+    text-align: center;
+}
+
+.map-panel {
+    float: right;
+    padding: 2px;
+}
+
+.spacer {
+    clear: both;
+}
+
+.header li {
+    margin: 7px;
+}
+
+.header li a {
+    color: white;
+    text-decoration: none;
+}
+
+.active-menu-item {
+    box-shadow: 0 2px 3px -2px lightgreen;
+}
+
+fieldset legend {
+    margin-left: 10px;
+}
+
+fieldset {
+    padding: 5px;
+}
+
+#vehicles-list-select {
+    margin-top: 10px;
+}
