@@ -23,7 +23,14 @@ if (browserType) {document.write("<div class=" + browserType + ">");if (browserV
 
 <div class="CGroup"><div class=CTopic><h3 class=CTitle><a name="OpenLayersTools.Control.Functions"></a>Functions</h3></div></div>
 
-<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="OpenLayersTools.Control.addControls"></a>addControls</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class="Prototype"><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class="PBeforeParameters  prettyprint "nowrap>addControls: function (</td><td class="PParameter  prettyprint " nowrap>controls</td><td class="PAfterParameters  prettyprint "nowrap>)</td></tr></table></td></tr></table></blockquote><p>Function creates and adds controls to the OpenLayers.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>controls</td><td class=CDLDescription>An object with a list of the necessary controls and their parameters.</td></tr></table></div></div></div>
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="OpenLayersTools.Control.addControls"></a>addControls</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class="Prototype"><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class="PBeforeParameters  prettyprint "nowrap>addControls: function (</td><td class="PParameter  prettyprint " nowrap>controls</td><td class="PAfterParameters  prettyprint "nowrap>)</td></tr></table></td></tr></table></blockquote><p>Function creates and adds controls to the OpenLayers.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>controls</td><td class=CDLDescription>An object with a list of the necessary controls and their parameters.</td></tr></table><h4 class=CHeading>Returns</h4><p>Fill this.controls array with object controls.</p><h4 class=CHeading>Usage</h4><blockquote><pre class="prettyprint">OpenLayersTools.Control.addControls({
+LayerSwitcher: {
+controlType: 'LayerSwitcher',
+roundedCorner: true
+},
+MousePosition: {
+controlType: 'MousePosition'
+}</pre></blockquote></div></div></div>
 
 </div><!--Content-->
 

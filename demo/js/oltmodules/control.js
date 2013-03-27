@@ -33,6 +33,21 @@ Control.prototype = {
 
      Parameters:
      controls - An object with a list of the necessary controls and their parameters.
+
+     Returns:
+     Fill this.controls array with object controls.
+
+     Usage:
+     (start code)
+     OpenLayersTools.Control.addControls({
+     LayerSwitcher: {
+     controlType: 'LayerSwitcher',
+     roundedCorner: true
+     },
+     MousePosition: {
+     controlType: 'MousePosition'
+     }
+     (end code)
      */
     addControls: function (controls) {
         for (var control in controls) {
