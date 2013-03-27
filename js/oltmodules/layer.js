@@ -1,5 +1,5 @@
 /*
- Class: Layer
+ Class: OpenLayersTools.Layer
  Implements all the methods for working with layers of OpenLayers.
  */
 /*
@@ -8,6 +8,9 @@
 
  Parameters:
  parent - Object that is the parent of this class.
+
+ Returns:
+ Object of Layer.
  */
 function Layer(parent) {
     this.parent = parent;
@@ -187,6 +190,7 @@ Layer.prototype = {
                 }
             }
         }
+        return false;
     },
     /*
      Function: getFeaturesById

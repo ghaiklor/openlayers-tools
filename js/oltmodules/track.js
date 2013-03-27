@@ -1,5 +1,5 @@
 /*
- Class: Track
+ Class: OpenLayersTools.Track
  Implements methods for working with tracks.
  */
 /*
@@ -8,6 +8,9 @@
 
  Parameters:
  parent - Object that is the parent of this class.
+
+ Returns:
+ Object of Track.
  */
 function Track(parent) {
     this.parent = parent;

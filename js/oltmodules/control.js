@@ -1,5 +1,5 @@
 /*
- Class: Control
+ Class: OpenLayersTools.Control
  Implements methods for working with controls of OpenLayers.
  */
 /*
@@ -8,6 +8,9 @@
 
  Parameters:
  parent - Object that is the parent of this class.
+
+ Returns:
+ Object of Control.
  */
 function Control(parent) {
     this.parent = parent;
@@ -179,5 +182,6 @@ Control.prototype = {
                     break;
             }
         }
+        return true;
     }
 };

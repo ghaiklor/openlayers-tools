@@ -1,5 +1,5 @@
 /*
- Class: Console
+ Class: OpenLayersTools.Console
  Implements methods to access the developer console.
  */
 /*
@@ -8,6 +8,9 @@
 
  Parameters:
  parent - Object that is the parent of this class.
+
+ Returns:
+ Object of Console.
  */
 function Console(parent) {
     /*

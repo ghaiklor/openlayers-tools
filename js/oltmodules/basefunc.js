@@ -1,5 +1,5 @@
 /*
- Class: BaseFunc
+ Class: OpenLayersTools.BaseFunc
  This class implements the basic functions such as centering the map, converting the geometry and more.
  */
 /*
@@ -8,6 +8,9 @@
 
  Parameters:
  parent - Object that is the parent of this class.
+
+ Returns:
+ Object of BaseFunc.
  */
 function BaseFunc(parent) {
     this.parent = parent;
