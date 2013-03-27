@@ -42,7 +42,7 @@ OpenLayersApplication.prototype = {
             id: id,
             label: 'Testing Vehicle ' + id,
             display: '',
-            externalGraphic: './../../images/car.png'
+            externalGraphic: './images/car.png'
         });
         Core.Objects.OpenLayersTools.BaseFunc.centerMap(longitude, latitude, 'EPSG:4326');
         this.vehicles[id] = {
@@ -50,7 +50,7 @@ OpenLayersApplication.prototype = {
             longitude: longitude,
             latitude: latitude
         };
-        $(vehicleslist).append($('<li id="vehicle-' + id + '"><input type="checkbox" checked="checked" onclick="Core.Objects.OpenLayersApplication.visibilityVehicle($(this), ' + id + ');"/><a href="#" data-vehicle-id="' + id + '" onclick="Core.Objects.OpenLayersApplication.centerVehicle(' + id + ')">ID: ' + id + '</a><div class="vehicles-list-buttons"><a href="#" onclick="Core.Objects.OpenLayersApplication.moveVehicle(' + id + ')"><img src="./../images/move.png" alt="Move Vehicle" title="Передвинуть ТС"/></a><a href="#" onclick="Core.Objects.OpenLayersApplication.removeVehicle(' + id + ')"><img src="./../images/delete.png" alt="Remove Vehicle" title="Удалить ТС"/></a></div></li><div class="spacer"></div>'));
+        $(vehicleslist).append($('<li id="vehicle-' + id + '"><input type="checkbox" checked="checked" onclick="Core.Objects.OpenLayersApplication.visibilityVehicle($(this), ' + id + ');"/><a href="#" data-vehicle-id="' + id + '" onclick="Core.Objects.OpenLayersApplication.centerVehicle(' + id + ')">ID: ' + id + '</a><div class="vehicles-list-buttons"><a href="#" onclick="Core.Objects.OpenLayersApplication.moveVehicle(' + id + ')"><img src="./images/move.png" alt="Move Vehicle" title="Передвинуть ТС"/></a><a href="#" onclick="Core.Objects.OpenLayersApplication.removeVehicle(' + id + ')"><img src="./images/delete.png" alt="Remove Vehicle" title="Удалить ТС"/></a></div></li><div class="spacer"></div>'));
     }
 };
 
