@@ -1,4 +1,4 @@
-/*! OpenLayersTools - v0.1.0 - 2013-03-28
+/*! OpenLayersTools - v1.0.0 - 2013-05-15
 * http://ghaiklor.github.com/openlayers-tools/demo/
 * Copyright (c) 2013 Obrezkov Evgen aka ghaiklor; Licensed MIT */
 /*
@@ -115,8 +115,10 @@ BaseFunc.prototype = {
             return defaultConfig;
         }
         for (var param in defaultConfig) {
-            if (existsConfig[param] == undefined || existsConfig[param] == null) {
-                existsConfig[param] = defaultConfig[param];
+            if (defaultConfig.hasOwnProperty(param)) {
+                if (existsConfig[param] == undefined || existsConfig[param] == null) {
+                    existsConfig[param] = defaultConfig[param];
+                }
             }
         }
         return existsConfig;
@@ -187,7 +189,7 @@ BaseFunc.prototype = {
      (end code)
      */
     checkUndefined: function (object) {
-        return object == undefined || object == null || object == '';
+        return object == undefined || object == null || object == '' || object.length == 0;
     },
     /*
      Function: geometryToString
@@ -303,7 +305,9 @@ Console.prototype = {
         if (console) {
             console.group(name);
             for (var message in messages) {
-                console.log(messages[message]);
+                if (messages.hasOwnProperty(message)) {
+                    console.log(messages[message]);
+                }
             }
             console.groupEnd()
         }
@@ -372,150 +376,152 @@ Control.prototype = {
      */
     addControls: function (controls) {
         for (var control in controls) {
-            if (controls[control].controlType == undefined) {
-                this.parent.Console.writeError('Func: addControls | You must specify controlType attribute in control parameters!');
-                return false;
-            }
-            switch (controls[control].controlType) {
-                case 'ArgParser':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.ArgParser(controls[control]));
-                    break;
-                case 'Attribution':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Attribution(controls[control]));
-                    break;
-                case 'Button':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Button(controls[control]));
-                    break;
-                case 'CacheRead':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.CacheRead(controls[control]));
-                    break;
-                case 'CacheWrite':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.CacheWrite(controls[control]));
-                    break;
-                case 'DragFeature':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.DragFeature(this.parent.Layer.getLayerByName(controls[control].layerName), controls[control]));
-                    break;
-                case 'DragPan':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.DragPan(controls[control]));
-                    break;
-                case 'DrawFeature':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.DrawFeature(this.parent.Layer.getLayerByName(controls[control].layerName), controls[control].OpenLayersHandler, controls[control]));
-                    break;
-                case 'EditingToolbar':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.EditingToolbar(this.parent.Layer.getLayerByName(controls[control].layerName), controls[control]));
-                    break;
-                case 'Geolocate':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Geolocate(controls[control]));
-                    break;
-                case 'GetFeature':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.GetFeature(controls[control]));
-                    break;
-                case 'Graticule':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Graticule(controls[control]));
-                    break;
-                case 'KeyboardDefaults':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.KeyboardDefaults(controls[control]));
-                    break;
-                case 'LayerSwitcher':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.LayerSwitcher(controls[control]));
-                    break;
-                case 'Measure':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Measure(controls[control].OpenLayersHandler, controls[control]));
-                    break;
-                case 'ModifyFeature':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.ModifyFeature(this.parent.Layer.getLayerByName(controls[control].layerName), controls[control]));
-                    break;
-                case 'MousePosition':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.MousePosition(controls[control]));
-                    break;
-                case 'Navigation':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Navigation(controls[control]));
-                    break;
-                case 'NavigationHistory':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.NavigationHistory(controls[control]));
-                    break;
-                case 'NavToolbar':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.NavToolbar(controls[control]));
-                    break;
-                case 'OverviewMap':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.OverviewMap(controls[control]));
-                    break;
-                case 'Pan':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Pan(controls[control].direction, controls[control]));
-                    break;
-                case 'Panel':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Panel(controls[control]));
-                    break;
-                case 'PanPanel':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.PanPanel(controls[control]));
-                    break;
-                case 'PanZoom':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.PanZoom(controls[control]));
-                    break;
-                case 'PanZoomBar':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.PanZoomBar(controls[control]));
-                    break;
-                case 'Permalink':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Permalink(controls[control].element, controls[control].base, controls[control]));
-                    break;
-                case 'PinchZoom':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.PinchZoom(controls[control]));
-                    break;
-                case 'Scale':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Scale(controls[control]));
-                    break;
-                case 'ScaleLine':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.ScaleLine(controls[control]));
-                    break;
-                case 'SelectFeature':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.SelectFeature(this.parent.Layer.getLayerByName(controls[control].layerName), controls[control]));
-                    break;
-                case 'SLDSelect':
-                    //TODO: болванка SLDSelect
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.SLDSelect(controls[control]));
-                    break;
-                case 'Snapping':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Snapping(controls[control]));
-                    break;
-                case 'Split':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Split(controls[control]));
-                    break;
-                case 'TouchNavigation':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.TouchNavigation(controls[control]));
-                    break;
-                case 'TransformFeature':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.TransformFeature(this.parent.Layer.getLayerByName(controls[control].layerName), controls[control]));
-                    break;
-                case 'UTFGrid':
-                    //TODO: болванка UTFGrid
-                    break;
-                case 'WMSGetFeatureInfo':
-                    //TODO: болванка WMSGetFeatureInfo
-                    break;
-                case 'WMTSGetFeatureInfo':
-                    //TODO: болванка WMTSGetFeatureInfo
-                    break;
-                case 'Zoom':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Zoom(controls[control]));
-                    break;
-                case 'ZoomBox':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.ZoomBox(controls[control]));
-                    break;
-                case 'ZoomIn':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.ZoomIn(controls[control]));
-                    break;
-                case 'ZoomOut':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.ZoomOut(controls[control]));
-                    break;
-                case 'ZoomPanel':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.ZoomPanel(controls[control]));
-                    break;
-                case 'ZoomToMaxExtent':
-                    this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.ZoomToMaxExtent(controls[control]));
-                    break;
-                default:
-                    this.parent.Console.writeWarning('Func: addControls | unexpected control type: ' + control);
-                    break;
+            if (controls.hasOwnProperty(control)) {
+                if (controls[control].controlType == undefined) {
+                    this.parent.Console.writeError('Func: addControls | You must specify controlType attribute in control parameters!');
+                    return false;
+                }
+                switch (controls[control].controlType) {
+                    case 'ArgParser':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.ArgParser(controls[control]));
+                        break;
+                    case 'Attribution':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Attribution(controls[control]));
+                        break;
+                    case 'Button':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Button(controls[control]));
+                        break;
+                    case 'CacheRead':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.CacheRead(controls[control]));
+                        break;
+                    case 'CacheWrite':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.CacheWrite(controls[control]));
+                        break;
+                    case 'DragFeature':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.DragFeature(this.parent.Layer.getLayerByName(controls[control].layerName), controls[control]));
+                        break;
+                    case 'DragPan':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.DragPan(controls[control]));
+                        break;
+                    case 'DrawFeature':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.DrawFeature(this.parent.Layer.getLayerByName(controls[control].layerName), controls[control].OpenLayersHandler, controls[control]));
+                        break;
+                    case 'EditingToolbar':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.EditingToolbar(this.parent.Layer.getLayerByName(controls[control].layerName), controls[control]));
+                        break;
+                    case 'Geolocate':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Geolocate(controls[control]));
+                        break;
+                    case 'GetFeature':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.GetFeature(controls[control]));
+                        break;
+                    case 'Graticule':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Graticule(controls[control]));
+                        break;
+                    case 'KeyboardDefaults':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.KeyboardDefaults(controls[control]));
+                        break;
+                    case 'LayerSwitcher':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.LayerSwitcher(controls[control]));
+                        break;
+                    case 'Measure':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Measure(controls[control].OpenLayersHandler, controls[control]));
+                        break;
+                    case 'ModifyFeature':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.ModifyFeature(this.parent.Layer.getLayerByName(controls[control].layerName), controls[control]));
+                        break;
+                    case 'MousePosition':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.MousePosition(controls[control]));
+                        break;
+                    case 'Navigation':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Navigation(controls[control]));
+                        break;
+                    case 'NavigationHistory':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.NavigationHistory(controls[control]));
+                        break;
+                    case 'NavToolbar':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.NavToolbar(controls[control]));
+                        break;
+                    case 'OverviewMap':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.OverviewMap(controls[control]));
+                        break;
+                    case 'Pan':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Pan(controls[control].direction, controls[control]));
+                        break;
+                    case 'Panel':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Panel(controls[control]));
+                        break;
+                    case 'PanPanel':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.PanPanel(controls[control]));
+                        break;
+                    case 'PanZoom':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.PanZoom(controls[control]));
+                        break;
+                    case 'PanZoomBar':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.PanZoomBar(controls[control]));
+                        break;
+                    case 'Permalink':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Permalink(controls[control].element, controls[control].base, controls[control]));
+                        break;
+                    case 'PinchZoom':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.PinchZoom(controls[control]));
+                        break;
+                    case 'Scale':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Scale(controls[control]));
+                        break;
+                    case 'ScaleLine':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.ScaleLine(controls[control]));
+                        break;
+                    case 'SelectFeature':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.SelectFeature(this.parent.Layer.getLayerByName(controls[control].layerName), controls[control]));
+                        break;
+                    case 'SLDSelect':
+                        //TODO: болванка SLDSelect
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.SLDSelect(controls[control]));
+                        break;
+                    case 'Snapping':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Snapping(controls[control]));
+                        break;
+                    case 'Split':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Split(controls[control]));
+                        break;
+                    case 'TouchNavigation':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.TouchNavigation(controls[control]));
+                        break;
+                    case 'TransformFeature':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.TransformFeature(this.parent.Layer.getLayerByName(controls[control].layerName), controls[control]));
+                        break;
+                    case 'UTFGrid':
+                        //TODO: болванка UTFGrid
+                        break;
+                    case 'WMSGetFeatureInfo':
+                        //TODO: болванка WMSGetFeatureInfo
+                        break;
+                    case 'WMTSGetFeatureInfo':
+                        //TODO: болванка WMTSGetFeatureInfo
+                        break;
+                    case 'Zoom':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.Zoom(controls[control]));
+                        break;
+                    case 'ZoomBox':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.ZoomBox(controls[control]));
+                        break;
+                    case 'ZoomIn':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.ZoomIn(controls[control]));
+                        break;
+                    case 'ZoomOut':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.ZoomOut(controls[control]));
+                        break;
+                    case 'ZoomPanel':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.ZoomPanel(controls[control]));
+                        break;
+                    case 'ZoomToMaxExtent':
+                        this.addControlToMapAndSaveForReturn(control, new OpenLayers.Control.ZoomToMaxExtent(controls[control]));
+                        break;
+                    default:
+                        this.parent.Console.writeWarning('Func: addControls | unexpected control type: ' + control);
+                        break;
+                }
             }
         }
         return true;
@@ -585,52 +591,54 @@ Layer.prototype = {
     addMap: function (maps) {
         var layers = [];
         for (var map in maps) {
-            switch (maps[map]) {
-                case 'Google Physical':
-                    layers.push(new OpenLayers.Layer.Google(map, {
-                        type: google.maps.MapTypeId.TERRAIN
-                    }));
-                    break;
-                case 'Google Streets':
-                    layers.push(new OpenLayers.Layer.Google(map));
-                    break;
-                case 'Google Hybrid':
-                    layers.push(new OpenLayers.Layer.Google(map, {
-                        type: google.maps.MapTypeId.HYBRID
-                    }));
-                    break;
-                case 'Google Satellite':
-                    layers.push(new OpenLayers.Layer.Google(map, {
-                        type: google.maps.MapTypeId.SATELLITE
-                    }));
-                    break;
-                case 'Bing Aerial':
-                    layers.push(new OpenLayers.Layer.Bing({
-                        name: map,
-                        type: 'Aerial',
-                        key: "ArpBrjuWemAE1aBMYQUQp6e4PAy_hRI2L4yvUrRVacgaj-RQWJlqLn-LnkwgAuw9"
-                    }));
-                    break;
-                case 'Bing Aerial Labels':
-                    layers.push(new OpenLayers.Layer.Bing({
-                        name: map,
-                        type: 'AerialWithLabels',
-                        key: "ArpBrjuWemAE1aBMYQUQp6e4PAy_hRI2L4yvUrRVacgaj-RQWJlqLn-LnkwgAuw9"
-                    }));
-                    break;
-                case 'Bing Road':
-                    layers.push(new OpenLayers.Layer.Bing({
-                        name: map,
-                        type: 'Road',
-                        key: "ArpBrjuWemAE1aBMYQUQp6e4PAy_hRI2L4yvUrRVacgaj-RQWJlqLn-LnkwgAuw9"
-                    }));
-                    break;
-                case 'OSM':
-                    layers.push(new OpenLayers.Layer.OSM());
-                    break;
-                default:
-                    this.parent.Console.writeWarning('Func: addMap | Wrong layer type! Please check your parameters in function addMap!');
-                    break;
+            if (maps.hasOwnProperty(map)) {
+                switch (maps[map]) {
+                    case 'Google Physical':
+                        layers.push(new OpenLayers.Layer.Google(map, {
+                            type: google.maps.MapTypeId.TERRAIN
+                        }));
+                        break;
+                    case 'Google Streets':
+                        layers.push(new OpenLayers.Layer.Google(map));
+                        break;
+                    case 'Google Hybrid':
+                        layers.push(new OpenLayers.Layer.Google(map, {
+                            type: google.maps.MapTypeId.HYBRID
+                        }));
+                        break;
+                    case 'Google Satellite':
+                        layers.push(new OpenLayers.Layer.Google(map, {
+                            type: google.maps.MapTypeId.SATELLITE
+                        }));
+                        break;
+                    case 'Bing Aerial':
+                        layers.push(new OpenLayers.Layer.Bing({
+                            name: map,
+                            type: 'Aerial',
+                            key: "ArpBrjuWemAE1aBMYQUQp6e4PAy_hRI2L4yvUrRVacgaj-RQWJlqLn-LnkwgAuw9"
+                        }));
+                        break;
+                    case 'Bing Aerial Labels':
+                        layers.push(new OpenLayers.Layer.Bing({
+                            name: map,
+                            type: 'AerialWithLabels',
+                            key: "ArpBrjuWemAE1aBMYQUQp6e4PAy_hRI2L4yvUrRVacgaj-RQWJlqLn-LnkwgAuw9"
+                        }));
+                        break;
+                    case 'Bing Road':
+                        layers.push(new OpenLayers.Layer.Bing({
+                            name: map,
+                            type: 'Road',
+                            key: "ArpBrjuWemAE1aBMYQUQp6e4PAy_hRI2L4yvUrRVacgaj-RQWJlqLn-LnkwgAuw9"
+                        }));
+                        break;
+                    case 'OSM':
+                        layers.push(new OpenLayers.Layer.OSM());
+                        break;
+                    default:
+                        this.parent.Console.writeWarning('Func: addMap | Wrong layer type! Please check your parameters in function addMap!');
+                        break;
+                }
             }
         }
         if (layers.length != 0) {
@@ -687,8 +695,10 @@ Layer.prototype = {
 
         var stylesMap = [];
         for (var style in config.styleMap) {
-            if (!makeStyleAndPushToArray(style)) {
-                this.parent.Console.writeWarning('Func: addVectorLayer | Error in makeStyleMap! Check addVectorLayer parameters!');
+            if (config.styleMap.hasOwnProperty(style)) {
+                if (!makeStyleAndPushToArray(style)) {
+                    this.parent.Console.writeWarning('Func: addVectorLayer | Error in makeStyleMap! Check addVectorLayer parameters!');
+                }
             }
         }
         stylesMap = new OpenLayers.StyleMap(stylesMap);
@@ -769,9 +779,11 @@ Layer.prototype = {
             return false;
         }
         for (var feature in layer.features) {
-            if (layer.features[feature] != undefined) {
-                if (layer.features[feature].attributes.id == id) {
-                    return layer.features[feature];
+            if (layer.features.hasOwnProperty(feature)) {
+                if (layer.features[feature] != undefined) {
+                    if (layer.features[feature].attributes.id == id) {
+                        return layer.features[feature];
+                    }
                 }
             }
         }
@@ -805,9 +817,11 @@ Layer.prototype = {
             return false;
         }
         for (var feature in layer.features) {
-            if (layer.features[feature] != undefined) {
-                if (layer.features[feature].attributes.id == id) {
-                    features.push(layer.features[feature]);
+            if (layer.features.hasOwnProperty(feature)) {
+                if (layer.features[feature] != undefined) {
+                    if (layer.features[feature].attributes.id == id) {
+                        features.push(layer.features[feature]);
+                    }
                 }
             }
         }
@@ -865,24 +879,26 @@ Track.prototype = {
         };
         var feature = null;
         for (var coord in coordinates) {
-            if (this.parent.BaseFunc.checkUndefined(coordinates[coord].longitude) || this.parent.BaseFunc.checkUndefined(coordinates[coord].latitude)) {
-                this.parent.Console.writeWarning('Func: buildTrack | Coordinates array have undefined coordinates! Please check array of coordinates in parameters of function!');
-                continue;
-            }
-            if (coordinates[coord].latitude != lastAddedPoints.latitude && coordinates[coord].longitude != lastAddedPoints.longitude) {
-                if ((Math.abs(coordinates[coord].longitude - lastAddedPoints.longitude) > attributes.minInterval) || Math.abs(coordinates[coord].latitude - lastAddedPoints.latitude) > attributes.minInterval) {
-                    if ((Math.abs(coordinates[coord].longitude - lastAddedPoints.longitude) < attributes.maxInterval) || (Math.abs(coordinates[coord].latitude - lastAddedPoints.latitude) < attributes.maxInterval)) {
-                        lastAddedPoints.longitude = coordinates[coord].longitude;
-                        lastAddedPoints.latitude = coordinates[coord].latitude;
-                        var point = new OpenLayers.Geometry.Point(coordinates[coord].longitude, coordinates[coord].latitude);
-                        point.transform(new OpenLayers.Projection(attributes.projection), this.parent.Map.getProjectionObject());
-                        trackPoints.push(point);
-                    } else {
-                        lastAddedPoints.longitude = coordinates[coord].longitude;
-                        lastAddedPoints.latitude = coordinates[coord].latitude;
-                        feature = new OpenLayers.Feature.Vector(new OpenLayers.Geometry.LineString(trackPoints), attributes);
-                        layer.addFeatures(feature);
-                        trackPoints = [];
+            if (coordinates.hasOwnProperty(coord)) {
+                if (this.parent.BaseFunc.checkUndefined(coordinates[coord].longitude) || this.parent.BaseFunc.checkUndefined(coordinates[coord].latitude)) {
+                    this.parent.Console.writeWarning('Func: buildTrack | Coordinates array have undefined coordinates! Please check array of coordinates in parameters of function!');
+                    continue;
+                }
+                if (coordinates[coord].latitude != lastAddedPoints.latitude && coordinates[coord].longitude != lastAddedPoints.longitude) {
+                    if ((Math.abs(coordinates[coord].longitude - lastAddedPoints.longitude) > attributes.minInterval) || Math.abs(coordinates[coord].latitude - lastAddedPoints.latitude) > attributes.minInterval) {
+                        if ((Math.abs(coordinates[coord].longitude - lastAddedPoints.longitude) < attributes.maxInterval) || (Math.abs(coordinates[coord].latitude - lastAddedPoints.latitude) < attributes.maxInterval)) {
+                            lastAddedPoints.longitude = coordinates[coord].longitude;
+                            lastAddedPoints.latitude = coordinates[coord].latitude;
+                            var point = new OpenLayers.Geometry.Point(coordinates[coord].longitude, coordinates[coord].latitude);
+                            point.transform(new OpenLayers.Projection(attributes.projection), this.parent.Map.getProjectionObject());
+                            trackPoints.push(point);
+                        } else {
+                            lastAddedPoints.longitude = coordinates[coord].longitude;
+                            lastAddedPoints.latitude = coordinates[coord].latitude;
+                            feature = new OpenLayers.Feature.Vector(new OpenLayers.Geometry.LineString(trackPoints), attributes);
+                            layer.addFeatures(feature);
+                            trackPoints = [];
+                        }
                     }
                 }
             }
@@ -915,12 +931,16 @@ Track.prototype = {
             this.parent.Console.writeError('Func: removeTrack | Layer ' + layerName + 'does\'t exists!');
             return false;
         }
-        var feature = this.parent.Layer.getFeatureById(layerName, trackId);
-        if (this.parent.BaseFunc.checkUndefined(feature) || !feature) {
+        var features = this.parent.Layer.getFeaturesById(layerName, trackId);
+        if (this.parent.BaseFunc.checkUndefined(features) || !features) {
             this.parent.Console.writeError('Func: removeTrack | Layer ' + layerName + 'doesn\'t have features with id ' + trackId);
             return false;
         }
-        layer.removeFeatures(feature);
+        for (var feature in features) {
+            if (features.hasOwnProperty(feature)) {
+                layer.removeFeatures(features[feature]);
+            }
+        }
         return true;
     },
     /*
@@ -946,16 +966,21 @@ Track.prototype = {
             this.parent.Console.writeError('Func: removeTrack | Layer ' + layerName + 'does\'t exists!');
             return false;
         }
-        var feature = this.parent.Layer.getFeatureById(layerName, trackId);
-        if (this.parent.BaseFunc.checkUndefined(feature) || !feature) {
+        var features = this.parent.Layer.getFeaturesById(layerName, trackId);
+        if (this.parent.BaseFunc.checkUndefined(features) || !features) {
             this.parent.Console.writeError('Func: removeTrack | Layer ' + layerName + 'doesn\'t have features with id ' + trackId);
             return false;
         }
-        if (visibility) {
-            feature.attributes.display = '';
-        } else {
-            feature.attributes.display = 'none';
+        for (var feature in features) {
+            if (features.hasOwnProperty(feature)) {
+                if (visibility) {
+                    features[feature].attributes.display = '';
+                } else {
+                    features[feature].attributes.display = 'none';
+                }
+            }
         }
+        layer.redraw();
         return true;
     }
 };

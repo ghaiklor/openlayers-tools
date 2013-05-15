@@ -79,7 +79,9 @@ Console.prototype = {
         if (console) {
             console.group(name);
             for (var message in messages) {
-                console.log(messages[message]);
+                if (messages.hasOwnProperty(message)) {
+                    console.log(messages[message]);
+                }
             }
             console.groupEnd()
         }

@@ -53,24 +53,26 @@ Track.prototype = {
         };
         var feature = null;
         for (var coord in coordinates) {
-            if (this.parent.BaseFunc.checkUndefined(coordinates[coord].longitude) || this.parent.BaseFunc.checkUndefined(coordinates[coord].latitude)) {
-                this.parent.Console.writeWarning('Func: buildTrack | Coordinates array have undefined coordinates! Please check array of coordinates in parameters of function!');
-                continue;
-            }
-            if (coordinates[coord].latitude != lastAddedPoints.latitude && coordinates[coord].longitude != lastAddedPoints.longitude) {
-                if ((Math.abs(coordinates[coord].longitude - lastAddedPoints.longitude) > attributes.minInterval) || Math.abs(coordinates[coord].latitude - lastAddedPoints.latitude) > attributes.minInterval) {
-                    if ((Math.abs(coordinates[coord].longitude - lastAddedPoints.longitude) < attributes.maxInterval) || (Math.abs(coordinates[coord].latitude - lastAddedPoints.latitude) < attributes.maxInterval)) {
-                        lastAddedPoints.longitude = coordinates[coord].longitude;
-                        lastAddedPoints.latitude = coordinates[coord].latitude;
-                        var point = new OpenLayers.Geometry.Point(coordinates[coord].longitude, coordinates[coord].latitude);
-                        point.transform(new OpenLayers.Projection(attributes.projection), this.parent.Map.getProjectionObject());
-                        trackPoints.push(point);
-                    } else {
-                        lastAddedPoints.longitude = coordinates[coord].longitude;
-                        lastAddedPoints.latitude = coordinates[coord].latitude;
-                        feature = new OpenLayers.Feature.Vector(new OpenLayers.Geometry.LineString(trackPoints), attributes);
-                        layer.addFeatures(feature);
-                        trackPoints = [];
+            if (coordinates.hasOwnProperty(coord)) {
+                if (this.parent.BaseFunc.checkUndefined(coordinates[coord].longitude) || this.parent.BaseFunc.checkUndefined(coordinates[coord].latitude)) {
+                    this.parent.Console.writeWarning('Func: buildTrack | Coordinates array have undefined coordinates! Please check array of coordinates in parameters of function!');
+                    continue;
+                }
+                if (coordinates[coord].latitude != lastAddedPoints.latitude && coordinates[coord].longitude != lastAddedPoints.longitude) {
+                    if ((Math.abs(coordinates[coord].longitude - lastAddedPoints.longitude) > attributes.minInterval) || Math.abs(coordinates[coord].latitude - lastAddedPoints.latitude) > attributes.minInterval) {
+                        if ((Math.abs(coordinates[coord].longitude - lastAddedPoints.longitude) < attributes.maxInterval) || (Math.abs(coordinates[coord].latitude - lastAddedPoints.latitude) < attributes.maxInterval)) {
+                            lastAddedPoints.longitude = coordinates[coord].longitude;
+                            lastAddedPoints.latitude = coordinates[coord].latitude;
+                            var point = new OpenLayers.Geometry.Point(coordinates[coord].longitude, coordinates[coord].latitude);
+                            point.transform(new OpenLayers.Projection(attributes.projection), this.parent.Map.getProjectionObject());
+                            trackPoints.push(point);
+                        } else {
+                            lastAddedPoints.longitude = coordinates[coord].longitude;
+                            lastAddedPoints.latitude = coordinates[coord].latitude;
+                            feature = new OpenLayers.Feature.Vector(new OpenLayers.Geometry.LineString(trackPoints), attributes);
+                            layer.addFeatures(feature);
+                            trackPoints = [];
+                        }
                     }
                 }
             }
@@ -103,12 +105,16 @@ Track.prototype = {
             this.parent.Console.writeError('Func: removeTrack | Layer ' + layerName + 'does\'t exists!');
             return false;
         }
-        var feature = this.parent.Layer.getFeatureById(layerName, trackId);
-        if (this.parent.BaseFunc.checkUndefined(feature) || !feature) {
+        var features = this.parent.Layer.getFeaturesById(layerName, trackId);
+        if (this.parent.BaseFunc.checkUndefined(features) || !features) {
             this.parent.Console.writeError('Func: removeTrack | Layer ' + layerName + 'doesn\'t have features with id ' + trackId);
             return false;
         }
-        layer.removeFeatures(feature);
+        for (var feature in features) {
+            if (features.hasOwnProperty(feature)) {
+                layer.removeFeatures(features[feature]);
+            }
+        }
         return true;
     },
     /*
@@ -134,16 +140,21 @@ Track.prototype = {
             this.parent.Console.writeError('Func: removeTrack | Layer ' + layerName + 'does\'t exists!');
             return false;
         }
-        var feature = this.parent.Layer.getFeatureById(layerName, trackId);
-        if (this.parent.BaseFunc.checkUndefined(feature) || !feature) {
+        var features = this.parent.Layer.getFeaturesById(layerName, trackId);
+        if (this.parent.BaseFunc.checkUndefined(features) || !features) {
             this.parent.Console.writeError('Func: removeTrack | Layer ' + layerName + 'doesn\'t have features with id ' + trackId);
             return false;
         }
-        if (visibility) {
-            feature.attributes.display = '';
-        } else {
-            feature.attributes.display = 'none';
+        for (var feature in features) {
+            if (features.hasOwnProperty(feature)) {
+                if (visibility) {
+                    features[feature].attributes.display = '';
+                } else {
+                    features[feature].attributes.display = 'none';
+                }
+            }
         }
+        layer.redraw();
         return true;
     }
 };

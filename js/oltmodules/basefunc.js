@@ -39,8 +39,10 @@ BaseFunc.prototype = {
             return defaultConfig;
         }
         for (var param in defaultConfig) {
-            if (existsConfig[param] == undefined || existsConfig[param] == null) {
-                existsConfig[param] = defaultConfig[param];
+            if (defaultConfig.hasOwnProperty(param)) {
+                if (existsConfig[param] == undefined || existsConfig[param] == null) {
+                    existsConfig[param] = defaultConfig[param];
+                }
             }
         }
         return existsConfig;
@@ -111,7 +113,7 @@ BaseFunc.prototype = {
      (end code)
      */
     checkUndefined: function (object) {
-        return object == undefined || object == null || object == '';
+        return object == undefined || object == null || object == '' || object.length == 0;
     },
     /*
      Function: geometryToString
