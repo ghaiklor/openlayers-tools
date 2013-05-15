@@ -97,15 +97,15 @@ fieldset {
     padding: 5px;
 }
 
-.vehicles-list-container {
+.vehicles-list-container, .track-list-container {
     text-align: left;
 }
 
-.vehicles-list-container > ul {
+.vehicles-list-container > ul, .track-list-container > ul {
     list-style: none outside none;
 }
 
-#vehicles-list > li {
+#vehicles-list > li, #track-list > li {
     border: 1px solid lightsalmon;
     display: inline-block;
     margin: 5px 0;
@@ -113,10 +113,23 @@ fieldset {
     width: 100%;
 }
 
-.vehicles-list-buttons {
+.vehicles-list-buttons, .track-list-buttons {
     float: right;
 }
 
-#vehicles-list li > a {
+#vehicles-list li > a, #track-list li > a {
     margin-left: 10px;
+}
+
+.vehicles-demo button, .tracks-demo button {
+    border: 1px solid black;
+    border-radius: 4px 4px 4px 4px;
+    font-size: 1em;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.vehicles-demo button:hover, .tracks-demo button:hover {
+    cursor: pointer;
 }
