@@ -81,12 +81,13 @@ html, body {
 }
 
 .header li a {
-    color: white;
+    color: rgba(0, 0, 0, 0);
+    text-shadow: 0 0 white;
     text-decoration: none;
 }
 
 .active-menu-item {
-    box-shadow: 0 2px 3px -2px lightgreen;
+    border-bottom: 1px solid white;
 }
 
 fieldset legend {
@@ -106,30 +107,61 @@ fieldset {
 }
 
 #vehicles-list > li, #track-list > li {
-    border: 1px solid lightsalmon;
+    border-bottom: 1px solid black;
     display: inline-block;
     margin: 5px 0;
     line-height: 30px;
     width: 100%;
 }
 
+#vehicles-list > li:last-child, #track-list > li:last-child {
+    border-bottom: none;
+}
+
+#vehicles-list > li > input[type=checkbox], #track-list > li > input[type=checkbox] {
+    margin-top: 3px;
+}
+
 .vehicles-list-buttons, .track-list-buttons {
     float: right;
+    margin-top: 3px;
 }
 
 #vehicles-list li > a, #track-list li > a {
     margin-left: 10px;
+    font-size: 1.5em;
+    color: rgba(0, 0, 0, 0);
+    text-shadow: 0 0 black;
 }
 
 .vehicles-demo button, .tracks-demo button {
-    border: 1px solid black;
-    border-radius: 4px 4px 4px 4px;
+    border: 0px solid black;
+    border-radius: 20px 20px 20px 20px;
     font-size: 1em;
     margin-bottom: 10px;
     margin-top: 10px;
-    padding: 10px;
+    padding: 5px;
+    background: #606c88;
+    background: -moz-linear-gradient(top, #606c88 0%, #3f4c6b 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #606c88), color-stop(100%, #3f4c6b));
+    background: -webkit-linear-gradient(top, #606c88 0%, #3f4c6b 100%);
+    background: -o-linear-gradient(top, #606c88 0%, #3f4c6b 100%);
+    background: -ms-linear-gradient(top, #606c88 0%, #3f4c6b 100%);
+    background: linear-gradient(to bottom, #606c88 0%, #3f4c6b 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#606c88', endColorstr='#3f4c6b', GradientType=0);
+    color: rgba(0, 0, 0, 0);
+    text-shadow: 0 0 white;
 }
 
 .vehicles-demo button:hover, .tracks-demo button:hover {
     cursor: pointer;
+    box-shadow: 2px 0 0 0 white inset, -2px 0 0 0 white inset;
+}
+
+.vehicles-demo button:active, .tracks-demo button:active {
+    box-shadow: 2px 0 0 0 white inset, -2px 0 0 0 white inset, 0 1px 0 0 white inset, 0 -1px 0 0 white inset;
+}
+
+button::-moz-focus-inner {
+    border: 0;
 }

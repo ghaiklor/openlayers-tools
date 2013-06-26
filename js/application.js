@@ -203,6 +203,7 @@ var Core = {
         this.Objects.OpenLayersApplication = new OpenLayersApplication();
 
         this.Objects.OpenLayersTools = new OpenLayersTools({
+            imgPath: './images/OpenLayers/',
             controls: [],
             zoom: 6
         });
